@@ -1,0 +1,30 @@
+.navigation-bar{
+    background-color: whitesmoke;
+}
+.nav-head{
+    color: rgba(0, 191, 255);
+ font: normal 40px 'Cookie', cursive;
+ font-weight: 800;
+ margin: 0;
+}
+.kers{
+    color:rgba(95, 158, 160);
+}
+.navbar-title{
+   text-decoration: none;
+    color: DarkSlateGray;
+}
+.navbar-title h2{
+    font-weight: bold;
+}
+.navbar-title:hover{
+    text-decoration: none;
+    color:sienna;
+}
+.nav-items{
+    text-decoration: none;
+    border-radius: 10px;
+}
+.nav-items:hover{
+    background-color:rgba(143, 188, 143, 0.61);
+}
