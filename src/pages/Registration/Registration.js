@@ -1,12 +1,12 @@
 import React from 'react';
-import {Link, useLocation, useNavigate} from 'react-router-dom';
+import {Link, useLocation, useHistory} from 'react-router-dom';
 import useAuth from '../../context/useAuth';
 import { useState } from "react";
 // import {Spinner} from 'react-bootstrap';
 
 const Registration=() => {
     const location=useLocation();
-    const navigate=useNavigate();
+    const history=useHistory();
     const redirect_uri=location.state?.from.pathname||'/home';
     const {user, registerUser, isLoading, authError}=useAuth();
     const [userData, setUserData]=useState({});
@@ -21,7 +21,7 @@ const Registration=() => {
         const userName=userData.fname+' '+userData.lname;
         userData['userName']=userName;
 
-        registerUser(userData.email, userData.password,navigate,userData.userName)
+        registerUser(userData.email, userData.password,history,userData.userName)
         console.log('with user name', userData)
         e.preventDefault();
     }

@@ -9,7 +9,7 @@ const Review=() => {
     const onSubmit=data => {
         console.log(data);
         data.displayName=user.displayName;
-        axios.post(`http://localhost:5000/addreview `, data)
+        axios.post(`https://immense-escarpment-32991.herokuapp.com/addreview `, data)
             .then(res => {
                 if(res.data.insertedId) {
                     //confirmation

@@ -8,7 +8,7 @@ const Products=() => {
     const [loading, setLoading]=useState(true);
     //getting data from db
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://immense-escarpment-32991.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

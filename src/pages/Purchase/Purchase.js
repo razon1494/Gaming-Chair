@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useNavigate, useParams} from 'react-router-dom';
+import {Link, useHistory, useParams} from 'react-router-dom';
 import useAuth from '../../context/useAuth';
 
 const Purchase=() => {
@@ -7,7 +7,7 @@ const Purchase=() => {
     const {user}=useAuth();
     //getting params from url
     const {id}=useParams();
-    const navigate=useNavigate();
+    const history=useHistory();
     //required state declaration
     const [product, setProduct]=useState()
     const [phoneNumber, setPhoneNumber]=useState('');
@@ -16,7 +16,7 @@ const Purchase=() => {
     const addedProduct={};
     //getting Specific Data
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://immense-escarpment-32991.herokuapp.com/products/${id}`)
             .then(res => res.json())
         .then(data => setProduct(data))
     }, []);
@@ -30,14 +30,14 @@ const Purchase=() => {
         addedProduct.price=product.price;
         addedProduct.img=product.img;
 
-        fetch("http://localhost:5000/placeorder", {
+        fetch("https://immense-escarpment-32991.herokuapp.com/placeorder", {
             method: "POST",
             headers: {"content-type": "application/json"},
             body: JSON.stringify(addedProduct),
         }).then((res) => res.json())
             .then((result) => console.log(result))
             .finally(alert('Item Booked. Please Confirm on manage booking page'));
-        navigate('/');
+        history.push('/');
 }
 
      const handlePhone=e => {

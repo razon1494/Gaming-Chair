@@ -8,14 +8,14 @@ const ManageOrders=() => {
     const [control, setConrol]=useState(false);
     //getting orders data
     useEffect(() => {
-        fetch('http://localhost:5000/managebookings')
+        fetch('https://immense-escarpment-32991.herokuapp.com/managebookings')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [check, control]);
 
     //handle approve
     const handleApprove=id => {
-        const url=`http://localhost:5000/services/${id}`;
+        const url=`https://immense-escarpment-32991.herokuapp.com/services/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -31,7 +31,7 @@ const ManageOrders=() => {
 const handleDelete=(id) => {
         var sure=window.confirm(`Are you sure you want to delete this order?`);
         if(sure) {
-      fetch(`http://localhost:5000/deleteorder/${id}`, {
+      fetch(`https://immense-escarpment-32991.herokuapp.com/deleteorder/${id}`, {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     })

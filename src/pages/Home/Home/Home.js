@@ -13,7 +13,7 @@ const Home=() => {
     const [reviewloading, setReviewLoading]=useState(true);
     //getting products from db
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://immense-escarpment-32991.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -25,7 +25,7 @@ const Home=() => {
     console.log(popularProducts);
 //getting review from db
     useEffect(() => {
-    fetch('http://localhost:5000/reviews')
+    fetch('https://immense-escarpment-32991.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

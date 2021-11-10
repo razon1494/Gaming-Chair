@@ -7,7 +7,7 @@ const ManageProducts=() => {
     const [control, setConrol]=useState(false);
     //getting data from db
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://immense-escarpment-32991.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -17,7 +17,7 @@ const ManageProducts=() => {
     const handleDelete=id => {
         var sure=window.confirm(`Are you sure you want to delete this Product`);
         if(sure) {
-      fetch(`http://localhost:5000/deleteproduct/${id}`, {
+      fetch(`https://immense-escarpment-32991.herokuapp.com/deleteproduct/${id}`, {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     })

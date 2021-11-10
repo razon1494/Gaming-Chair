@@ -13,7 +13,7 @@ const Product=({pd}) => {
             <p>{spec}</p>
             <p>Price ${price}</p>
              <Link to={`/purchase/${_id}`}>
-                <button className="book-btn">Book {Name}</button>
+                <button className="book-btn">Buy Now</button>
             </Link>
 
         </div>

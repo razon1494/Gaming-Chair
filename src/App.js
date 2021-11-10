@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import AuthProvider from './context/AuthProvider';
-import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Home from './pages/Home/Home/Home';
 import Products from './pages/Explore/Products/Products';
 import Login from './pages/Login/Login';
@@ -18,35 +18,24 @@ import ManageOrders from './pages/Dashboard/ManageOrders/ManageOrders';
 import AddProduct from './pages/Dashboard/AddProduct/AddProduct';
 import MakeAdmin from './pages/Dashboard/Make Admin/MakeAdmin';
 import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
+import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
 
       <AuthProvider>
-
-        {/* routing using react router version 6 */}
         <BrowserRouter>
-        <Routes>
+        <Switch>
 
-        <Route path="/" element={<Home />} />
-        <Route path="home" element={<Home />} />
-        <Route path="products" element={<Products />} />
-        <Route path="purchase/:id" element={<Purchase />} />
-        <Route path="dashboard/*" element={<Dashboard />}>
-          {/* Nested Routing for v-6 */}
-            <Route path='' element={<DashBoardHome></DashBoardHome>}/>
-            <Route path='pay' element={<Payment></Payment>}/>
-            <Route path='myorder' element={<MyOrders></MyOrders>}/>
-            <Route path='review' element={<Review></Review>}/>
-            <Route path='manageorders' element={<ManageOrders></ManageOrders>}/>
-              <Route path='addproduct' element={<AddProduct></AddProduct>} />
-              <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>} />
-              <Route path='manageproducts' element={<ManageProducts></ManageProducts>} />
-        </Route>
-        <Route path="login" element={<Login/>} />
-        <Route path="register" element={<Registration/>} />
-        <Route path="/*" element={<NotFound/>} />
-      </Routes>
+        <Route exact path="/"> <Home></Home> </Route>
+        <Route exact path="/home"><Home /> </Route>
+        <Route exact path="/products"><Products /></Route>
+            <PrivateRoute exact path="/purchase/:id"><Purchase/></PrivateRoute>
+            <Route path="/dashboard"><Dashboard /></Route>
+            <Route exact path="/login"><Login/></Route>
+            <Route exact path="/register"><Registration /></Route>
+             <Route path="*"><NotFound/></Route>
+      </Switch>
         </BrowserRouter>
       </AuthProvider>
     </div>

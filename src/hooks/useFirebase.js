@@ -30,7 +30,7 @@ const useFirebase=() => {
               }).catch((error) => {
 
               });
-           history('/',{replace: true});
+           history.replace('/');
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -47,7 +47,7 @@ const useFirebase=() => {
           .then((userCredential) => {
     //location set
             const destination=location.state?.from ||'/';
-            history(destination ,{replace: true});
+            history.replace(destination);
     // Signed in
     setAuthError('');
     // ...
@@ -94,9 +94,10 @@ const useFirebase=() => {
     }, [auth]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://immense-escarpment-32991.herokuapp.com/users/${user.email}`)
       .then(res => res.json())
       .then(data => {
+        console.log(data);
       setAdmin(data.admin)
     })
   },[user.email])
@@ -114,7 +115,7 @@ const useFirebase=() => {
     const saveUser=(email, displayName, method) => {
         const role='user';
         const user = { email, displayName, role };
-        fetch('http://localhost:5000/users', {
+        fetch('https://immense-escarpment-32991.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

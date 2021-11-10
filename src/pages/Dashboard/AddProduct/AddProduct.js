@@ -7,7 +7,7 @@ const AddProduct=() => {
 
     const onSubmit=data => {
         console.log(data);
-        axios.post(`http://localhost:5000/addservice `, data)
+        axios.post(`https://immense-escarpment-32991.herokuapp.com/addservice `, data)
             .then(res => {
                 if(res.data.insertedId) {
                     //confirmation

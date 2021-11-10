@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useLocation, useNavigate} from 'react-router-dom';
+import {Link, useLocation, useHistory} from 'react-router-dom';
 import useAuth from '../../context/useAuth';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 
 const Login=() => {
     const location=useLocation();
-    const navigate=useNavigate();
+    const history=useHistory();
     const {user, loginUser, isLoading, signInWithGoogle, authError}=useAuth();
     const [loginData, setLoginData]=useState({})
     const handleOnChange=e => {
@@ -19,7 +19,7 @@ const Login=() => {
         setLoginData(newLoginData);
     }
     const handleLoginSubmit=e => {
-        loginUser(loginData.email, loginData.password, location, navigate);
+        loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
 
