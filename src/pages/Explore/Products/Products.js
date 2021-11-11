@@ -19,13 +19,13 @@ const Products=() => {
     return (
         <div>
             <NavBar ></NavBar>
-            <br /><br />
+
             <div className="products">
                 <h2 className="products-title mt-5 text-center">All Chair Collections</h2>
-                {
+                <div className='d-flex align-items-center justify-content-center'>{
                 loading && <Spinner animation="grow" variant="warning" />
-                }
-                <div className="container row mx-auto">
+                }</div>
+                <div className="container row mx-auto gx-3 align-items-center justify-content-center">
                     {
                         products.map(pd => <Product
                             key={pd._id}

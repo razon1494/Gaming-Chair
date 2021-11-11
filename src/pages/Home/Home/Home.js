@@ -4,7 +4,8 @@ import Review from '../../Dashboard/Review/Review';
 import Product from '../../Explore/Product/Product';
 import NavBar from '../../Shared/NavBar/NavBar';
 import Reviews from '../Reviews/Reviews';
-
+import Slider from '../Slider/Slider';
+import './Home.css';
 
 const Home=() => {
     const [products, setProducts]=useState([]);
@@ -35,15 +36,18 @@ const Home=() => {
 
     return (
         <div>
+            {/* First Part Navbar  */}
             <NavBar></NavBar>
-            <br /><br /><br /><br />
-
+            {/* Second Part Slider */}
+            <Slider></Slider>
+            {/* Third Part Products */}
             <div className="products-section">
-                <h2 className='text-center'>Our Top Rated Products</h2>
+                <h2 className='text-center top-products-title py-2'>OUR TOP RATED CHAIRS</h2>
+                <div className='d-flex align-items-center justify-content-center'>
                 {
                 loading && <Spinner animation="grow" variant="warning" />
-                }
-                <div className="container row mx-auto">
+                }</div>
+                <div className="container row mx-auto align-items-center justify-content-center">
                 {
                     popularProducts.map(pd => <Product
                         key={pd._id}
@@ -52,11 +56,11 @@ const Home=() => {
                 }
                 </div>
                 <div className="review-section">
-                    <h2 className='text-center'>Our Customer Review</h2>
+                    <h2 className='text-center review-title py-3'>WHAT CLIENT'S SAY ABOUT <br /> GAMER'S CHAIRS</h2>
                     {
                 reviewloading && <Spinner animation="grow" variant="warning" />
                     }
-            <div className="container row mx-auto">
+            <div className="container row mx-auto gx-3 align-items-center justify-content-center">
                 {
                     reviews.map(review => <Reviews
                         key={review._id}
