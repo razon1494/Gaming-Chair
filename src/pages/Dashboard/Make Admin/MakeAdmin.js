@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import useAuth from '../../../context/useAuth';
-
+import './MakeAdmin.css'
 const MakeAdmin=() => {
      const [email, setEmail]=useState('');
     const [success, setSuccess]=useState(false);
@@ -21,7 +21,7 @@ const MakeAdmin=() => {
                 setSuccess(true)
             }
             else {
-                alert('rejected')
+                alert('rejected, given email is not an user')
             }
 
         })
@@ -33,11 +33,13 @@ const MakeAdmin=() => {
     }
     return (
         <div>
-            <h2>Make an Admin</h2>
+            <h2 className='admin-title-h text-center'>Make an Admin</h2>
+
             <form onSubmit={handleOnSubmit}>
-                <input onBlur={handleOnBlur} class="form-control form-control-lg" type="email" placeholder="Enter New Email For Admin"></input>
+                <input  onBlur={handleOnBlur} class="form-control form-control-lg w-50 mx-auto my-5" type="email" placeholder="Enter New Email For Admin"></input>
                 <br />
-                <button type="submit" class="btn btn-primary mb-2">Confirm Admin</button>
+                <div className='d-flex justify-content-center'>
+                <button type="submit" class="button-84 mx-auto mb-2">CONFIRM ADMIN</button></div>
             </form>
         </div>
     );

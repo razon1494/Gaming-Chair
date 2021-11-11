@@ -5,30 +5,29 @@ import './ContactUs.css';
 const ContactUs=() => {
     return (
         <div className='contact-us-container p-3 border rounded-3'>
-        <h2 className='text-center contact-title' >Contact Us</h2>
         {/* responsive contact us form */}
-<Form>
+<Form className='container'>
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
-      <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
+      <Form.Label>Name</Form.Label>
+      <Form.Control type="email" placeholder="Enter Your Name" />
     </Form.Group>
   </Row>
   <Form.Group className="mb-3" controlId="formGridAddress1">
-    <Form.Label>Name</Form.Label>
-    <Form.Control placeholder="Name" />
+    <Form.Label>Phone Number</Form.Label>
+    <Form.Control placeholder="Phone Number" />
   </Form.Group>
 
-<FloatingLabel controlId="floatingTextarea2" label="Comments">
+<FloatingLabel controlId="floatingTextarea2" label="Please Write down your order details. We will give you our estimate via email">
     <Form.Control
       as="textarea"
-      placeholder="Leave a comment here"
+      placeholder=""
       style={{ height: '100px' }}
     />
   </FloatingLabel>
-  <Link to='/'><Button variant="success" className='my-3'>
+  <Link to='/'><button className='my-3 button-50 fs-5'>
     Submit
-  </Button></Link>
+  </button></Link>
 </Form>
 
 </div>

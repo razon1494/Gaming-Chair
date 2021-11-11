@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Spinner} from 'react-bootstrap';
-
+import './ManageProducts.css'
 const ManageProducts=() => {
     const [products, setProducts]=useState([]);
     const [loading, setLoading]=useState(true);
@@ -34,17 +34,19 @@ const ManageProducts=() => {
     }
     let index=1;
     return (
-        <div>
-            <h2>Products </h2>
+        <div className='manage-product-container'>
+        <h2 className='manage-product-h text-center mb-4'>PRODUCTS </h2>
+        <p className='text-center fs-4 manage-product-p'>Be Careful! If you delete the product will gone for forever entirely. You need to add the product on add new product section.</p>
             {
                 loading && <Spinner animation="grow" variant="warning" />
                 }
  <div className='table-responsive'>
-<table class="table table-hover table-dark table-responsive-sm">
+<table class="table mt-4 table-hover table-light table-responsive-sm">
 <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Product Name</th>
+      <th scope="col">Product</th>
+      {/* <th scope="col">Photo</th> */}
       <th scope="col">Price</th>
       <th scope="col">Delete</th>
     </tr>
@@ -53,8 +55,10 @@ const ManageProducts=() => {
             {
                         products.map(pd => <tr>
                             <th scope="row">{index++}</th>
-                            <td>{pd.Name}</td>
-                            <td>{pd.price}</td>
+                          <td><img className='img-fluid' src={pd.img} alt="" width="100px"/> <br /> <span className='product-name'> {pd.Name}</span></td>
+                          {/* <td>
+                            <img className='img-fluid' src={pd.img} alt="" width="100px"/></td> */}
+                            <td className='produc-price'>${pd.price}</td>
                             <td>
                                 <button
                 onClick={()=> handleDelete(pd._id)}

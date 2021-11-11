@@ -1,6 +1,5 @@
 import React from 'react';
-import {Button, Col, Row} from 'react-bootstrap';
-
+import {Button, Col, Row, Spinner} from 'react-bootstrap';
 import useAuth from '../../context/useAuth';
 import NavBar from '../Shared/NavBar/NavBar';
 import DashBoardHome from './DashboardHome/DashBoardHome';
@@ -18,37 +17,43 @@ import AddProduct from './AddProduct/AddProduct';
 import MakeAdmin from './Make Admin/MakeAdmin';
 import ManageProducts from './ManageProducts/ManageProducts';
 import AdminRoute from '../Login/AdminRoute/AdminRoute';
-
+import Footer from '../Home/Footer/Footer';
+import './Dashboard.css'
+import PrivateRoute from '../Login/PrivateRoute/PrivateRoute';
+import UserRoute from '../Login/UserRoute/UserRoute';
+// import UserRoute from '../Login/UserRoute/UserRoute';
 const Dashboard=() => {
-    const {user, admin, logout}=useAuth();
+    const {user,isLoading, admin, logout}=useAuth();
     console.log(admin);
     let { path, url } = useRouteMatch();
+
+    if(isLoading) { return <Spinner animation="grow" variant="warning" />;}
 
     return (
         <div>
             <NavBar></NavBar>
-        <div className='container'>
-
-            <br /><br /><br />
-
-            <Row>
-                    <Col className='dashboard-panel' xs={12} md={3}>
+        <div className='full-dashboard  bg-black'>
+        <div className='container dashboard-container'>
+            {!isLoading && <Row className='justify-content-center '>
+                        <Col className='dashboard-panel bg-black mt-1 ' xs={12} md={5} lg={3}>
+                            <br /><br /><br />
+                            <div className=' d-flex flex-column justify-content-center align-items-center'>
                         {
-                            admin? <div>
-                                <Link to={`${url}/manageorders`}>Manage All Orders</Link>
+                            admin ? <div >
+                                <Link className='links my-3' to={`${url}/manageorders`}> <button className='button-30 my-3'>Manage All Orders</button> </Link>
                         <br />
-                        <Link to={`${url}/addproduct`}>Add A Product</Link>
+                        <Link className='links' to={`${url}/addproduct`}> <button className='button-30 my-3'> Add A New Product</button></Link>
                         <br />
-                        <Link to={`${url}/makeadmin`}>Make Admin</Link>
+                        <Link className='links' to={`${url}/makeadmin`}><button className='button-30 my-3'> Create An Admin </button></Link>
                         <br />
-                        <Link to={`${url}/manageproducts`}>Manage Products</Link>
+                        <Link className='links' to={`${url}/manageproducts`}><button className='button-30 my-3'> Manage Products</button></Link>
                             </div>:<div>
-                                    {/* For General user routes */}
-                        <Link to={`${url}/pay`}>Payment</Link>
+                        {/* For General user routes */}
+                        <Link className='links' to={`${url}/pay`}><button className='button-30 my-3'> Pay Your bill</button></Link>
                         <br />
-                        <Link to={`${url}/myorder`}>My Orders</Link>
+                        <Link className='links' to={`${url}/myorder`}><button className='button-30 my-3'> My Orders</button></Link>
                         <br />
-                        <Link to={`${url}/review`}>Review</Link>
+                        <Link className='links' to={`${url}/review`}><button className='button-30 my-3'> Review</button></Link>
                         <br /><br />
                         {/* For Admin Routes */}
                         </div>
@@ -56,9 +61,10 @@ const Dashboard=() => {
 
 
 
-                        <Button onClick={logout} className='nav-items fs-6 px-3  py-2 fw-bold text-dark text-start' as={Link} to="/login" variant="light">Logout</Button>
+                        <button onClick={logout} className='button-30 my-5 px-4' as={Link} to="/login" >Logout</button></div>
                 </Col>
-                    <Col className='dashboard-routing' xs={6} md={9}>
+                        <Col className='dashboard-routing' xs={12} md={7} lg={9}>
+                            <br /><br /><br />
                         <Switch>
                                 <Route exact path={path}>
                                 <DashBoardHome></DashBoardHome>
@@ -79,18 +85,18 @@ const Dashboard=() => {
                                 <Route exact path={path}>
                                 <DashBoardHome></DashBoardHome>
                                 </Route>
-                                <Route path={`${path}/pay`}>
+                                <PrivateRoute path={`${path}/pay`}>
                                 <Payment></Payment>
-                                </Route>
-                                <Route path={`${path}/review`}>
+                                </PrivateRoute>
+                                <PrivateRoute path={`${path}/review`}>
                                 <Review></Review>
-                                </Route>
-                                <Route path={`${path}/myorder`}>
+                                </PrivateRoute>
+                                <PrivateRoute path={`${path}/myorder`}>
                                 <MyOrders></MyOrders>
-                                </Route>
-                                <Route path={`${path}/myorder`}>
+                                </PrivateRoute>
+                                <PrivateRoute path={`${path}/myorder`}>
                                 <MyOrders></MyOrders>
-                                </Route>
+                                </PrivateRoute>
                             </Switch>
 
 
@@ -135,10 +141,11 @@ const Dashboard=() => {
 
                         */}
                 </Col>
-            </Row>
+            </Row>}
 
 
-            </div>
+            </div></div>
+            <Footer></Footer>
          </div>
     );
 };

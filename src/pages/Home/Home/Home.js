@@ -3,6 +3,8 @@ import {Spinner} from 'react-bootstrap';
 import Review from '../../Dashboard/Review/Review';
 import Product from '../../Explore/Product/Product';
 import NavBar from '../../Shared/NavBar/NavBar';
+import ContactUs from '../contactUs/ContactUs';
+import Footer from '../Footer/Footer';
 import Reviews from '../Reviews/Reviews';
 import Slider from '../Slider/Slider';
 import './Home.css';
@@ -55,6 +57,7 @@ const Home=() => {
                     ></Product>)
                 }
                 </div>
+                {/* Fourth Part Review part */}
                 <div className="review-section">
                     <h2 className='text-center review-title py-3'>WHAT CLIENT'S SAY ABOUT <br /> GAMER'S CHAIRS</h2>
                     {
@@ -70,6 +73,11 @@ const Home=() => {
                 </div>
                 </div>
             </div>
+            {/* Bonus Contact Form */}
+            <h2 className='text-center contact-head py-2'>TO KNOW ABOUT WHOLESALE PRICE <br /> CONTACT US</h2>
+            <ContactUs></ContactUs>
+            {/* Last Footer Part */}
+            <Footer></Footer>
         </div>
     );
 };

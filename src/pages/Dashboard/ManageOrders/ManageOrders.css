@@ -1,0 +1,14 @@
+.manage-order-container{
+  /* background-image: url(https://i.ibb.co/cy56mr5/pngwing-com-5.png); */
+}
+
+.all-order-title{
+    color: darkolivegreen;
+    font-weight: 700;
+    word-spacing: 8px;
+    letter-spacing: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+.all-order-p{
+    color: gray;
+}

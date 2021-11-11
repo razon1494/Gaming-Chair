@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 const Login=() => {
     const location=useLocation();
     const history=useHistory();
-    const {user, loginUser, isLoading, signInWithGoogle, authError}=useAuth();
+    const {user, loginUser,isUser, admin, isLoading, signInWithGoogle, authError}=useAuth();
     const [loginData, setLoginData]=useState({})
     const handleOnChange=e => {
         const field=e.target.name;
@@ -22,6 +22,11 @@ const Login=() => {
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
+
+
+    // if(user.email) {
+    //     history.push('/dashboard')
+    // }
 
 
     return (

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Spinner} from 'react-bootstrap';
+import Footer from '../../Home/Footer/Footer';
 import NavBar from '../../Shared/NavBar/NavBar';
 import Product from '../Product/Product';
 import './Products.css'
@@ -19,10 +20,10 @@ const Products=() => {
     return (
         <div>
             <NavBar ></NavBar>
-
-            <div className="products">
-                <h2 className="products-title mt-5 text-center">All Chair Collections</h2>
-                <div className='d-flex align-items-center justify-content-center'>{
+<br />
+            <div className="products mt-5">
+                <h1 className="products-title mt-5 text-center">EXPLORE ALL OF OUR CHAIR COLLECTIONS</h1>
+                <div className='d-flex align-items-center justify-content-center mt-5'>{
                 loading && <Spinner animation="grow" variant="warning" />
                 }</div>
                 <div className="container row mx-auto gx-3 align-items-center justify-content-center">
@@ -33,6 +34,7 @@ const Products=() => {
                         ></Product>)
                     }
                 </div>
+                <Footer></Footer>
             </div>
 
         </div>

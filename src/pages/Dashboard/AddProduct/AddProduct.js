@@ -20,7 +20,7 @@ const AddProduct=() => {
   }
     return (
         <div>
-            <h2>Add a product here</h2>
+            <h2 className='add-product-title text-center'>ADD A NEW PRODUCT</h2>
 
             <div className="form-container container">
                 <form className='form row align-items-center justify-content-center' onSubmit={handleSubmit(onSubmit)}>
@@ -45,10 +45,10 @@ const AddProduct=() => {
                  <h5 className='d-inline col-md-4'>Summary :   </h5>
                 <input className='col-md-8 py-3 my-3' {...register("summary", {required: true})} placeholder='Short Description About product' />
                 <br /><br />
-                 <h3 className='my-4'>Write Description About Your Tour below   </h3>
+                 <h3 className='my-4 text-center' >Write Description About Your Tour below   </h3>
                 <textarea  className="form-control m-3 p-4 w-75"{...register("details", {required: true})} placeholder='Details' />
                 <br /><br />
-      <input className='w-25 submit-part py-2 my-3 fs-3' type="submit" />
+      <input className='w-25 button-50 submit-part py-2 my-3 fs-3' type="submit" />
     </form>
             </div>
 

@@ -50,15 +50,16 @@ const handleDelete=(id) => {
     let index=1;
 
     return (
-        <div>
-            <h2>Admin Manage All Orders</h2>
-
+        <div className='manage-order-container'>
+        <h2 className='text-center all-order-title'>HERE IS ALL ORDERS</h2>
+        <p className='text-center all-order-p'>You can make status pending to shipped or delete the product</p>
             <div className='table-responsive'>
-<table class="table table-hover table-dark table-responsive-sm">
+<table class="table table-hover table-light table-responsive-sm">
 <thead>
     <tr>
       <th scope="col">#</th>
-                        <th scope="col">User Info</th>
+       <th scope="col">User Info</th>
+       <th scope="col">Order Info</th>
       <th scope="col">Status</th>
       <th scope="col">Delete</th>
     </tr>
@@ -68,7 +69,9 @@ const handleDelete=(id) => {
                         orders.map(service => <tr>
                             <th scope="row">{index++}</th>
                             <td>{service.displayName} <br /> {service.email} <br /> {service.phonenumber}</td>
-                            {/* <td>{service.email} <br /> {service.phonenumber}</td> */}
+                          <td>
+                            <img className='img-fluid' src={service.img} alt="" width="100px"/> <br />
+                            {service.Name} <br /> ${service.price}</td>
                             {/* <td>{service.phonenumber}</td> */}
                             <td>
                                 {

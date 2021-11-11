@@ -27,10 +27,10 @@ const NavBar=() => {
                 <NavLink className='nav-items fs-5 px-3  py-2 text-light' to='/products'>Explore</NavLink>
       {user?.email && <NavLink className='nav-items fs-5 px-3  py-2 text-light' to="/dashboard">Dashboard</NavLink>}
       {user?.email ?
-      <Button onClick={logout} className='nav-items fs-5 px-3 me-2  py-2 fw-bold text-light text-start' as={Link} to="/login" variant="dark">Logout</Button> :
+      <button onClick={logout} className='fs-5 nav-items py-2 px-3 me-2 fw-bold text-light text-start logout' as={Link} to="/login" >Logout</button> :
       <Nav.Link className='nav-items fs-5 px-3  py-2 fw-bold text-light' as={Link} to="/login">Sign In</Nav.Link>}
       <Navbar.Text>
-          <p className='fs-5 ms-3 text-danger fw-bold'> {user?.displayName}</p>
+          <p className='fs-5 ms-3 user-name fw-bold'> {user?.displayName}</p>
       </Navbar.Text>
     </Nav>
   </Navbar.Collapse>

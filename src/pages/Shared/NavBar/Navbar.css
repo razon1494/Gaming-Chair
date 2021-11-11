@@ -17,7 +17,11 @@
    text-decoration: none;
 
 }
-
+.logout{
+    background-color: transparent;
+    border: transparent;
+    margin-bottom: 20px;
+}
 .nav-items{
     text-decoration: none;
     border-radius: 10px;
@@ -26,4 +30,7 @@
 .nav-items:hover{
     background-color:royalblue;
     background-color:olive;
+}
+.user-name{
+    color: rgba(128, 255, 0, 0.692);
 }

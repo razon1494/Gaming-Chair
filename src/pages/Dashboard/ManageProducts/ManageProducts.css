@@ -1,0 +1,33 @@
+.manage-product-container{
+    background-image: url(https://i.ibb.co/cy56mr5/pngwing-com-5.png);
+}
+
+
+.manage-product-h{
+    color: darkolivegreen;
+    font-weight: 700;
+    word-spacing: 8px;
+    letter-spacing: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.manage-product-p{
+    color: grey;
+    font-weight: 500;
+}
+
+.product-name{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: darkred;
+    color: darkSlateGray;
+    font-family: 'Roboto', sans-serif;
+}
+.produc-price{
+    font-size: 1.2rem;
+    font-weight: 500;
+    /* color: darkred; */
+    color: darkSlateGray;
+    font-family: 'Roboto', sans-serif;
+}
