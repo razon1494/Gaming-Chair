@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {getAuth, createUserWithEmailAndPassword,signInWithPopup, signInWithEmailAndPassword ,GoogleAuthProvider ,updateProfile , onAuthStateChanged, getIdToken, signOut} from "firebase/auth";
 import initializeFirebase from "../Firebase/firebase.initialize";
 import Swal from "sweetalert2";
+import {useHistory} from "react-router-dom";
 //initialize firebase app
 initializeFirebase();
 const useFirebase=() => {
@@ -129,8 +130,11 @@ const useFirebase=() => {
     })
   },[user.email])
     //log out
-    const logout= () => {
-    signOut(auth).then(() => {
+
+  const logout=(history) => {
+history.push('/');
+      signOut(auth).then(() => {
+
   // Sign-out successful.
     }).catch((error) => {
   setAuthError(error.message)

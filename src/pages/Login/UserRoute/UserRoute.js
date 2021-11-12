@@ -8,7 +8,7 @@ const UserRoute=({children, ...rest}) => {
     console.log('hi for user route');
     const {user, isUser, isLoading}=useAuth();
     console.log(user.email, isUser, 'from user route');
-    if(isLoading || !isUser) {return <Spinner animation="border" variant="danger" />}
+    if(isLoading || !isUser) {return <Spinner className='d-flex align-items-center justify-content-center' animation="grow" variant="danger" />}
     console.log(user.email, isUser, 'from user route');
     return (
         <Route

@@ -9,7 +9,8 @@ import {
     Switch,
     Route,
     Link,
-    useRouteMatch
+    useRouteMatch,
+    useHistory
 } from "react-router-dom"
 import Review from './Review/Review';
 import ManageOrders from './ManageOrders/ManageOrders';
@@ -29,9 +30,10 @@ const Dashboard=() => {
     }, []);
     const {user,isLoading, admin, logout}=useAuth();
     console.log(admin);
-    let { path, url } = useRouteMatch();
+    let {path, url}=useRouteMatch();
+    const history=useHistory();
 
-    if(isLoading) { return <div className='d-flex align-items-center justify-content-center'><Spinner animation="grow" variant="warning" /></div> ;}
+    if(isLoading) { return <div className='d-flex align-items-center justify-content-center'><Spinner animation="grow" variant="warning" />  </div>;}
 
     return (
         <div>
@@ -65,7 +67,7 @@ const Dashboard=() => {
 
 
 
-                        <button onClick={logout} className='button-30 my-5 px-4' as={Link} to="/login" >Logout</button></div>
+                        <button onClick={()=>logout(history)} className='button-30 my-5 px-4' as={Link} to="/login" >Logout</button></div>
                 </Col>
                         <Col className='dashboard-routing' xs={12} md={7} lg={9}>
                             <br /><br /><br />

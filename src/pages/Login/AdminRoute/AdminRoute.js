@@ -7,7 +7,7 @@ import useAuth from '../../../context/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
     const { user,admin, isLoading } = useAuth();
-    if(isLoading || !admin) {return <Spinner animation="border" variant="danger" />}
+    if(isLoading || !admin) {return <div className='d-flex align-items-center justify-content-center'> <Spinner animation="grow" variant="danger" /></div>}
     console.log(user.email, admin, 'from l');
     return (
         <Route
