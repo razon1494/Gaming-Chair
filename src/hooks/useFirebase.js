@@ -28,15 +28,14 @@ const useFirebase=() => {
               updateProfile(auth.currentUser, {
                   displayName: name
               }).then(() => {
-                logout()
-                Swal.fire(
+                logout2()
+Swal.fire(
   'Congratulations!',
   'Your Registration is complete, Please sign in with email and password',
   'success'
 )
-
-              })
-           history.replace('/login');
+ })
+ history.replace('/login');
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -129,10 +128,21 @@ const useFirebase=() => {
       setIsUser(data.user)
     })
   },[user.email])
-    //log out
 
+   //log out
   const logout=(history) => {
 history.push('/');
+      signOut(auth).then(() => {
+
+  // Sign-out successful.
+    }).catch((error) => {
+  setAuthError(error.message)
+  // An error happened.
+}).finally(()=>  setIsLoading(false));;
+  }
+   //log out for register user again login
+  const logout2=() => {
+
       signOut(auth).then(() => {
 
   // Sign-out successful.
