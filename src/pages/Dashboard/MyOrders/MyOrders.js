@@ -5,6 +5,10 @@ import useAuth from '../../../context/useAuth';
 import './MyOrder.css'
 
 const MyOrders=() => {
+  //Title Change
+ useEffect(() => {
+        document.title="My Orders";
+    }, []);
     //getting all orders of user email
     const {user}=useAuth();
     const [bookings, setBookings]=useState();

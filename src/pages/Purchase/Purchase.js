@@ -7,6 +7,10 @@ import NotFound from '../NotFound/NotFound';
 import NavBar from '../Shared/NavBar/NavBar';
 import './Purchase.css'
 const Purchase=() => {
+    //Title Change
+ useEffect(() => {
+        document.title="Book Chair";
+    }, []);
     //destructuring user
     const {user}=useAuth();
     //getting params from url
@@ -86,7 +90,7 @@ const Purchase=() => {
                     <h5 className='details-p'> <span className='span'>Benifits:  {product?.details}</span>  </h5>
             <p className='text-start'>Your Email: {user.email}</p>
             <p className='text-start'>Your Name: {user.displayName}</p>
-            <p className='text-start'>Hello, <span className='place-details'>{user.displayName} </span>Please Put Your address & Phone number below. <span className='place-details'> {user.email} </span></p>
+            <p className='text-start'>Hello, <span className='place-details'>{user.displayName} (<span className='place-details'> {user.email} </span>) </span>Please Put Your address & Phone number below. </p>
             <h5 className='address'>Your Address</h5>
                     <textarea onChange={handleAddress} className="form-control container my-3" placeholder='Address' />
                     <h5 className='address my-4  '>Please Give Your Phone Number </h5>

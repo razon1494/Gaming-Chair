@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import useAuth from '../../../context/useAuth';
 import './DashBoardHome.css'
 const DashBoardHome=() => {
+     useEffect(() => {
+        document.title="Dashboard";
+    }, []);
     const {user, admin}=useAuth();
     return (
         <div className='dbhome'>

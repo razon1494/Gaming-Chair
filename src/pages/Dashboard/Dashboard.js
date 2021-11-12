@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Col, Row, Spinner} from 'react-bootstrap';
 import useAuth from '../../context/useAuth';
 import NavBar from '../Shared/NavBar/NavBar';
@@ -23,6 +23,10 @@ import PrivateRoute from '../Login/PrivateRoute/PrivateRoute';
 import UserRoute from '../Login/UserRoute/UserRoute';
 // import UserRoute from '../Login/UserRoute/UserRoute';
 const Dashboard=() => {
+    //Title Change
+ useEffect(() => {
+        document.title="Dashboard";
+    }, []);
     const {user,isLoading, admin, logout}=useAuth();
     console.log(admin);
     let { path, url } = useRouteMatch();

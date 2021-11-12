@@ -1,8 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Swal from 'sweetalert2';
 import useAuth from '../../../context/useAuth';
 import './MakeAdmin.css'
 const MakeAdmin=() => {
+     useEffect(() => {
+        document.title="Make Admin";
+    }, []);
      const [email, setEmail]=useState('');
     const [success, setSuccess]=useState(false);
     const {token}=useAuth();

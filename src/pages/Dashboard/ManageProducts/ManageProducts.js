@@ -3,6 +3,11 @@ import {Spinner} from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import './ManageProducts.css'
 const ManageProducts=() => {
+  //Title Change
+ useEffect(() => {
+        document.title="Manage Products";
+ }, []);
+
     const [products, setProducts]=useState([]);
     const [loading, setLoading]=useState(true);
     const [control, setConrol]=useState(false);

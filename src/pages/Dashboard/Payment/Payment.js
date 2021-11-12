@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
-const Payment = () => {
+const Payment=() => {
+    //Title Change
+ useEffect(() => {
+        document.title="Payment";
+    }, []);
     return (
         <div>
             <h2>Payment Coming Soon</h2>

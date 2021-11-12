@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
 import userEvent from '@testing-library/user-event';
 import useAuth from '../../../context/useAuth';
 import Swal from 'sweetalert2';
 const Review=() => {
+    //Title Change
+ useEffect(() => {
+        document.title="Review";
+    }, []);
     const {register, handleSubmit, reset}=useForm();
     const {user}=useAuth();
     const onSubmit=data => {

@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# GAMER'S CHAIRS
+## It is a Gaming Chair selling Company Website
+## To see our live website please click the link below
+## https://gamers-chair.web.app/home
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This is the client side code part of the website
 
-## Available Scripts
+### GAMER'S CHAIRS website has 4 major parts
+* Home
+* Users Booking
+* Dashboard
+### Dashboard has 7 nested routes, 4 of them for admin and 3 of them for user
+### Details Given Below
 
-In the project directory, you can run:
+### Home
+- This is the landing page of our website
+- A simple Navigation Bar and footer is fixed  so that user can route anywhere anytime
+- Home Page has an slider showing some energetic photos with qoutes.
+- After the slider 6 of our most popular chair shown.
+- We also have a section to contact us and get wholesale price.
+- But only this option is public.
+- To access other options users must have to be logged in
 
-### `yarn start`
+#### We kept login simple by using only email password base sign in so that user can login very easily without hassel.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- But after registration user will be redirected to login page.
+- Here user should login giving his/her registered email and password.
+- This extra process is just for security purpose
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Purchase Page
 
-### `yarn test`
+- In this page user can book his/her desired chair.
+- Also User can see details information about the chair.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Explore Page
 
-### `yarn build`
+- In this page all products are displayed card wise.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ------------------DASHBOARD------------------
+### Dashboard have two dofferent view for user and admin
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### User Dashboard
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Here user will see 3 different routes
 
-### `yarn eject`
+#### PAY Your Bill
+- Customer can pay his/her bill in this segment
+#### My Orders
+- Customer can See his/her own Orders in 'My Orders' segment, he/she can also delete orders there.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Review
+- Customer can give a review us with rating in 'Review' segment
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Admin Dashboard
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Manage All Orders
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Admin will see all the orders in this route/section,
+- Admin can delete the order
+- Admin can change the status pending to shipped here.
 
-## Learn More
+#### Add A New Product
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Admin can add a new chair product from this section.
+- After adding the product will show in explore page.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Create An Admin
+- Admin can creat another admin by email
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Manage Products
+- Admin can delete any existing products here

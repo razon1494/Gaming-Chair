@@ -10,6 +10,10 @@ import Slider from '../Slider/Slider';
 import './Home.css';
 
 const Home=() => {
+    //Title Change
+ useEffect(() => {
+        document.title="Gamer's Chairs";
+    }, []);
     const [products, setProducts]=useState([]);
     const [loading, setLoading]=useState(true);
     const [reviews, setReviews]=useState([]);

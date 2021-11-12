@@ -5,6 +5,10 @@ import NavBar from '../../Shared/NavBar/NavBar';
 import Product from '../Product/Product';
 import './Products.css'
 const Products=() => {
+    //Title Change
+ useEffect(() => {
+        document.title="Explore Chairs";
+    }, []);
     const [products, setProducts]=useState([]);
     const [loading, setLoading]=useState(true);
     //getting data from db

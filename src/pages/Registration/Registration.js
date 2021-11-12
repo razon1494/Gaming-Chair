@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link, useLocation, useHistory} from 'react-router-dom';
 import useAuth from '../../context/useAuth';
 import {useState} from "react";
@@ -8,6 +8,10 @@ import Swal from 'sweetalert2';
 // import {Spinner} from 'react-bootstrap';
 
 const Registration=() => {
+  //Title Change
+ useEffect(() => {
+        document.title="Registation";
+    }, []);
     const location=useLocation();
     const history=useHistory();
     const redirect_uri=location.state?.from.pathname||'/home';
@@ -48,8 +52,8 @@ const Registration=() => {
     return (
         <div className='signup'>
             <div className="login-welcome py-4 mb-4">
-            <h1 className='text-center'>Welcome To Gamer's Chairs</h1>
-            <h2 className='text-center'>Register Here</h2></div>
+            <h1 className='text-center fw-bold'>Welcome To Gamer's Chairs</h1>
+            <h2 className='text-center fw-bold'>Register Here</h2></div>
             <div className="container mx-auto">
             <form onSubmit={handleRegisterSubmit}>
                 <div className="form-group">
@@ -76,12 +80,10 @@ const Registration=() => {
 
 
                <h5> <Link className='toggle' to='/login'>Already Registered? Login Here</Link></h5>
-                {
-                        authError&&<p>{authError.message}</p>
-                    }
 
 
 
+<br /><br />
 
             </div>
         <Footer></Footer>

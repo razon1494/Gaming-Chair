@@ -2,7 +2,10 @@ import React, {useEffect, useState} from 'react';
 import Swal from 'sweetalert2';
 import './ManageOrders.css'
 const ManageOrders=() => {
-
+  //Title Change
+ useEffect(() => {
+        document.title="Manage Orders";
+    }, []);
     //state declare
     const [orders, setOrders]=useState([]);
     const [check, setCheck]=useState(true);

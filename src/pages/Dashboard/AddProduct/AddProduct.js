@@ -5,7 +5,9 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 const AddProduct=() => {
     const {register, handleSubmit, reset}=useForm();
-
+ useEffect(() => {
+        document.title="ADD CHAIR";
+    }, []);
     const onSubmit=data => {
         console.log(data);
         axios.post(`https://immense-escarpment-32991.herokuapp.com/addservice `, data)
@@ -13,8 +15,8 @@ const AddProduct=() => {
                 if(res.data.insertedId) {
                     //confirmation
                     Swal.fire(
-  'DONE!',
-  'Your Product Added Succcessfully!',
+  'ADDED!',
+  'Your Product Is Now Live!',
   'success'
 )
                     //reset the form

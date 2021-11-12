@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link, useLocation, useHistory} from 'react-router-dom';
 import useAuth from '../../context/useAuth';
 import { useState } from "react";
@@ -7,6 +7,10 @@ import { useForm } from "react-hook-form";
 import './Login.css'
 import Footer from '../Home/Footer/Footer';
 const Login=() => {
+    //Title Change
+ useEffect(() => {
+        document.title="Login Gamer's";
+    }, []);
     const location=useLocation();
     const history=useHistory();
     const {user, loginUser,isUser, admin, isLoading, signInWithGoogle, authError}=useAuth();
@@ -34,8 +38,8 @@ const Login=() => {
         <div className='login-full'>
 
             <div className="login-welcome py-3">
-        <h1 className='text-center login-welcome'>Welcome To <h2 className='nav-head d-inline'> Gamer's <span className='kers'>Chairs</span> </h2></h1>
-        <h2 className='text-center'>Login Here</h2></div>
+        <h1 className='text-center login-welcome fw-bold'>Welcome To <h2 className='nav-head d-inline'> Gamer's <span className='kers'>Chairs</span> </h2></h1>
+        <h2 className='text-center fw-bold'>Login Here</h2></div>
     <div className="container">
     <form onSubmit={handleLoginSubmit}>
     <div className='my-5'>
