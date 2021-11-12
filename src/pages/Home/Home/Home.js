@@ -51,7 +51,7 @@ const Home=() => {
                 <h2 className='text-center top-products-title py-2'>OUR TOP RATED CHAIRS</h2>
                 <div className='d-flex align-items-center justify-content-center'>
                 {
-                loading && <Spinner animation="grow" variant="warning" />
+                loading && <div className='d-flex align-items-center justify-content-center'><Spinner animation="grow" variant="warning" />  </div>
                 }</div>
                 <div className="container row mx-auto align-items-center justify-content-center">
                 {
@@ -65,7 +65,7 @@ const Home=() => {
                 <div className="review-section">
                     <h2 className='text-center review-title py-3'>WHAT CLIENT'S SAY ABOUT <br /> GAMER'S CHAIRS</h2>
                     {
-                reviewloading && <Spinner animation="grow" variant="warning" />
+                reviewloading && <div className='d-flex align-items-center justify-content-center'><Spinner animation="grow" variant="warning" />  </div>
                     }
             <div className="container row mx-auto gx-3 align-items-center justify-content-center">
                 {

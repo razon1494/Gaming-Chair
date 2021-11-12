@@ -80,7 +80,7 @@ const ManageProducts=() => {
         <h2 className='manage-product-h text-center mb-4'>PRODUCTS </h2>
         <p className='text-center fs-4 manage-product-p'>Be Careful! If you delete the product will gone for forever entirely. You need to add the product on add new product section.</p>
             {
-                loading && <Spinner animation="grow" variant="warning" />
+                loading && <div className='d-flex align-items-center justify-content-center'><Spinner animation="grow" variant="warning" />  </div>
                 }
  <div className='table-responsive'>
 <table class="table mt-4 table-hover table-light table-responsive-sm">

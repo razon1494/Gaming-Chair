@@ -28,7 +28,7 @@ const Products=() => {
             <div className="products mt-5">
                 <h1 className="products-title mt-5 text-center">EXPLORE ALL OF OUR CHAIR COLLECTIONS</h1>
                 <div className='d-flex align-items-center justify-content-center mt-5'>{
-                loading && <Spinner animation="grow" variant="warning" />
+                loading && <div className='d-flex align-items-center justify-content-center'><Spinner animation="grow" variant="warning" />  </div>
                 }</div>
                 <div className="container row mx-auto gx-3 align-items-center justify-content-center">
                     {

@@ -9,7 +9,7 @@ const PrivateRoute=({children, ...rest}) => {
 
   if(isLoading) {
   //private route spinner
-        return <Spinner animation="grow" variant="danger" />
+        return <div className='d-flex align-items-center justify-content-center'><Spinner animation="grow" variant="warning" />  </div>
     }
     return (
         <Route
