@@ -6,11 +6,13 @@ import {useHistory} from "react-router-dom";
 //initialize firebase app
 initializeFirebase();
 const useFirebase=() => {
+  const auth=getAuth();
   const [user, setUser]=useState({});
   const [isLoading, setIsLoading]=useState(true);
   const [authError, setAuthError]=useState('');
   const [admin, setAdmin]=useState(false);
-    const auth=getAuth();
+  const [checkAdmin, setCheckAdmin]=useState(false);
+
   const googleProvider=new GoogleAuthProvider();
 
     //register user
@@ -49,15 +51,32 @@ Swal.fire(
     // ..
   })
           .finally(()=>  setIsLoading(false));
-    }
+  }
+  useEffect(() => {
+    fetch(`https://immense-escarpment-32991.herokuapp.com/users/${user.email}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data, 'from admin finder');
+      setAdmin(data.admin)
+    })
+  },[user.email,checkAdmin])
     //sign in
   const loginUser=(email, password, location, history) => {
     setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
     //location set
-            const destination=location.state?.from ||'/';
-            history.replace(destination);
+            //to redirect admin dashboard
+            console.log('from user cr', admin);
+            if(admin) {
+              const destination=location.state?.from||'/dashboard';
+              history.replace(destination);
+            }
+            else {
+              console.log('else');
+              const destination=location.state?.from||'/';
+              history.replace(destination);
+            }
     // Signed in
     setAuthError('');
     // ...
@@ -142,9 +161,7 @@ history.push('/');
   }
    //log out for register user again login
   const logout2=() => {
-
       signOut(auth).then(() => {
-
   // Sign-out successful.
     }).catch((error) => {
   setAuthError(error.message)
@@ -174,7 +191,8 @@ history.push('/');
       signInWithGoogle,
         registerUser,
       loginUser,
-        authError,
+      authError,
+        checkAdmin, setCheckAdmin,
         logout
     }
 

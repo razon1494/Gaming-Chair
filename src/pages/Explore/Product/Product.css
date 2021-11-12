@@ -8,7 +8,6 @@
 }
 .product:hover .product-txt{
     background-color: rgba(47, 79, 79, 0.9);
-    /* background-color: peru; */
 }
 
 .product-txt{
@@ -18,18 +17,22 @@
     min-height: 300px;
     border-radius: 8px;
 }
+.price-p {
+
+  color: YellowGreen;
+}
 
 .chair-name{
-    color:aliceblue;
+    color:ghostwhite;
+    /* color:whitesmoke;
+    color:white; */
     font-weight: 700;
     line-height: 35px;
     letter-spacing: 3px;
 }
 
 .sub-title{
-    color: goldenrod;
-    color: indianred;
-    /* color: darkred; */
+    color: yellowgreen;
     font-size: 19px;
     font-weight: 700;
 }
@@ -37,7 +40,9 @@
 .summary{
     color: mintcream;
     color: rgba(218, 165, 32, 0.9);
+    color: rgba(255, 217, 0, 0.678);
     color: LightGoldenRodYellow;
+    font-weight: 500;
     text-align: start;
 }
 

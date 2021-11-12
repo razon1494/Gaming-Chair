@@ -88,7 +88,7 @@ const ManageProducts=() => {
     <tr>
       <th scope="col">#</th>
       <th scope="col">Product</th>
-      {/* <th scope="col">Photo</th> */}
+      <th scope="col">Photo</th>
       <th scope="col">Price</th>
       <th scope="col">Delete</th>
     </tr>
@@ -97,9 +97,9 @@ const ManageProducts=() => {
             {
                         products.map(pd => <tr>
                             <th scope="row">{index++}</th>
-                          <td><img className='img-fluid' src={pd.img} alt="" width="100px"/> <br /> <span className='product-name'> {pd.Name}</span></td>
-                          {/* <td>
-                            <img className='img-fluid' src={pd.img} alt="" width="100px"/></td> */}
+                          <td> <span className='product-name'> {pd.Name}</span></td>
+                          <td>
+                            <img className='img-fluid' src={pd.img} alt="" width="100px"/></td>
                             <td className='produc-price'>${pd.price}</td>
                             <td>
                                 <button

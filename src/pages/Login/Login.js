@@ -13,7 +13,7 @@ const Login=() => {
     }, []);
     const location=useLocation();
     const history=useHistory();
-    const {user, loginUser,isUser, admin, isLoading, signInWithGoogle, authError}=useAuth();
+    const {user,checkAdmin, setCheckAdmin, loginUser,isUser, admin, isLoading, signInWithGoogle, authError}=useAuth();
     const [loginData, setLoginData]=useState({})
     const handleOnChange=e => {
         const field=e.target.name;
@@ -22,8 +22,14 @@ const Login=() => {
         const newLoginData={...loginData}
         newLoginData[field]=value;
         setLoginData(newLoginData);
+        console.log(checkAdmin, 'before');
+        let toggle=!checkAdmin;
+        console.log(toggle,'toggle');
+        setCheckAdmin(toggle);
+        console.log(checkAdmin,'after');
     }
     const handleLoginSubmit=e => {
+        setCheckAdmin(!checkAdmin);
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }

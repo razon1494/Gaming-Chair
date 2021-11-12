@@ -12,7 +12,7 @@ const Product=({pd}) => {
             </h4>
             <p className='sub-title'>{subtitle}</p>
             <p className='summary'>{summary}</p>
-            <h4 className='price'>Price ${price}</h4>
+            <h4 className='price-p text-center'>Price ${price}</h4>
 
             </div>
             <div className="btn-div d-flex align-items-center justify-content-center">

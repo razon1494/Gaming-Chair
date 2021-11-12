@@ -5,7 +5,9 @@
     letter-spacing: 2px;
   font-family: 'Roboto', sans-serif;
 }
-
+.admin-page{
+  min-height: 500px;
+}
 
 
 /* CSS */

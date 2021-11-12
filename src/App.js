@@ -19,6 +19,11 @@ import AddProduct from './pages/Dashboard/AddProduct/AddProduct';
 import MakeAdmin from './pages/Dashboard/Make Admin/MakeAdmin';
 import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+import AdminRoute from './pages/Login/AdminRoute/AdminRoute';
+import ManageOrdersPage from './pages/Dashboard/ManageOrders/ManageOrdersPage';
+import AddProductsPage from './pages/Dashboard/AddProduct/AddProductsPage';
+import MakeAdminPage from './pages/Dashboard/Make Admin/MakeAdminPage';
+import ManageProductsPage from './pages/Dashboard/ManageProducts/ManageProductsPage';
 function App() {
   return (
     <div className="App">
@@ -30,8 +35,21 @@ function App() {
         <Route exact path="/"> <Home></Home> </Route>
         <Route exact path="/home"><Home /> </Route>
         <Route exact path="/products"><Products /></Route>
-            <PrivateRoute exact path="/purchase/:id"><Purchase/></PrivateRoute>
+        <PrivateRoute exact path="/purchase/:id"><Purchase/></PrivateRoute>
             <PrivateRoute path="/dashboard"><Dashboard /></PrivateRoute>
+            <AdminRoute exact path='/manageorders'>
+              <ManageOrdersPage></ManageOrdersPage>
+            </AdminRoute>
+            <AdminRoute exact path='/addproducts'>
+              <AddProductsPage></AddProductsPage>
+            </AdminRoute>
+            <AdminRoute exact path='/manageproducts'>
+              <ManageProductsPage></ManageProductsPage>
+            </AdminRoute>
+            <AdminRoute exact path='/makeadmin'>
+              <MakeAdminPage></MakeAdminPage>
+            </AdminRoute>
+
             <Route exact path="/login"><Login/></Route>
             <Route exact path="/register"><Registration /></Route>
              <Route path="*"><NotFound/></Route>
