@@ -21,7 +21,7 @@ const Review=() => {
 
   }
     return (
-        <div>
+        <div className='container'>
             <h2>Hello {user.displayName} Please Rate Us and Leave your valuable Review here</h2>
 
             <form className='form row align-items-center justify-content-center' onSubmit={handleSubmit(onSubmit)}>
@@ -39,7 +39,7 @@ const Review=() => {
                  <h3 className='d-inline col-md-4'>Your Review</h3>
                 <textarea  className="form-control col-md-8 py-3 my-3"{...register("details", {required: true})} placeholder='Details' />
                 <br /><br />
-      <input className='w-25 submit-part py-2 my-3 fs-3' type="submit" />
+      <input className='button-84 w-25 submit-part py-2 my-3 fs-3' type="submit" />
     </form>
 
         </div>

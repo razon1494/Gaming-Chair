@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import useAuth from '../../../context/useAuth';
+import './MyOrder.css'
 
 const MyOrders=() => {
     //getting all orders of user email
@@ -34,41 +35,44 @@ const MyOrders=() => {
     let sum=0;
     return (
         <div>
-            <h2>My Orders Are here</h2>
+            <h2 className='manage-product-h text-center'>My Orders Are here</h2>
             <div className='table-responsive'>
         <table className="table table-hover">
           <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Chair</th>
-      <th scope="col">Price</th>
-      <th scope="col">Delete</th>
-      <th scope="col">Status</th>
+      <th className='fs-5' scope="col">#</th>
+      <th className='fs-5' scope="col">Chair</th>
+      <th className='fs-5' scope="col">Photo</th>
+      <th className='fs-5' scope="col">Price</th>
+      <th className='fs-5' scope="col">Delete</th>
+      <th className='fs-5' scope="col">Status</th>
     </tr>
   </thead>
             {
             bookings?.map(item => <tbody key={item._id}>
                 <tr>
 
-                <th scope="row">{index++}</th>
-                <td>{item.Name}</td>
-                <td>${item.price}</td>
-                <td><button
+                <th className='fs-5' scope="row">{index++}</th>
+                <td className='fs-5'>{item.Name}</td>
+                <td className='fs-5'><img className='img-fluid' src={item.img} alt="" width="100px"/></td>
+                <td className='fs-5 fw-bold'>${item.price}</td>
+                <td className='fs-5'><button
                 onClick={()=> handleDelete(item._id)}
-                className="btn p-2"
+                className="crs-btn btn p-2 fs-4"
               >
                 <i class="fas fa-times cross"></i>
               </button></td>
-                    <td>
+                    <td className='fs-5'>
                         <p className='d-none'>{sum = sum+item.price}</p>
                         {item.status ? <p>Shipped</p> : <p>Pending</p> }
                 </td>
               </tr>
                 </tbody> )
                     }
-                    <th>#</th>
-                    <th>Total</th>
-                    <th>${sum}</th>
+            <th className='fs-3'>#</th>
+            <th>--</th>
+                    <th className='fs-3 text-danger'>Total</th>
+                    <th className='fs-3 text-danger'>${sum}</th>
                     <th>--</th>
                     <th>--</th>
 

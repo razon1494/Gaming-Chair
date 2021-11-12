@@ -1,9 +1,10 @@
 .manage-product-container{
-    background-image: url(https://i.ibb.co/cy56mr5/pngwing-com-5.png);
+    /* background-image: url(https://i.ibb.co/cy56mr5/pngwing-com-5.png); */
 }
 
 
 .manage-product-h{
+    color: darkolivegreen;
     color: darkolivegreen;
     font-weight: 700;
     word-spacing: 8px;

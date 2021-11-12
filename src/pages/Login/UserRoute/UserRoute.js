@@ -4,9 +4,11 @@ import { Route, Redirect } from 'react-router-dom';
 import useAuth from '../../../context/useAuth';
 
 
-const UserRoute = ({ children, ...rest }) => {
-    const { user,isUser, isLoading } = useAuth();
-    if(isLoading) {return <Spinner animation="border" variant="danger" />}
+const UserRoute=({children, ...rest}) => {
+    console.log('hi for user route');
+    const {user, isUser, isLoading}=useAuth();
+    console.log(user.email, isUser, 'from user route');
+    if(isLoading || !isUser) {return <Spinner animation="border" variant="danger" />}
     console.log(user.email, isUser, 'from user route');
     return (
         <Route

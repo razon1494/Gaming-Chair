@@ -85,18 +85,16 @@ const Dashboard=() => {
                                 <Route exact path={path}>
                                 <DashBoardHome></DashBoardHome>
                                 </Route>
-                                <PrivateRoute path={`${path}/pay`}>
+                                <UserRoute path={`${path}/pay`}>
                                 <Payment></Payment>
-                                </PrivateRoute>
-                                <PrivateRoute path={`${path}/review`}>
+                                </UserRoute>
+                                <UserRoute path={`${path}/review`}>
                                 <Review></Review>
-                                </PrivateRoute>
-                                <PrivateRoute path={`${path}/myorder`}>
+                                </UserRoute>
+                                <UserRoute path={`${path}/myorder`}>
                                 <MyOrders></MyOrders>
-                                </PrivateRoute>
-                                <PrivateRoute path={`${path}/myorder`}>
-                                <MyOrders></MyOrders>
-                                </PrivateRoute>
+                                </UserRoute>
+
                             </Switch>
 
 
