@@ -104,7 +104,7 @@ const useFirebase=() => {
 //user check for user route
   const [isUser, setIsUser]=useState(false);
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user.email}`)
+    fetch(`https://immense-escarpment-32991.herokuapp.com/user/${user.email}`)
       .then(res => res.json())
       .then(data => {
         console.log(data, 'from db');
