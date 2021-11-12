@@ -1,7 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useHistory, useParams} from 'react-router-dom';
+import Swal from 'sweetalert2';
 import useAuth from '../../context/useAuth';
-
+import Footer from '../Home/Footer/Footer';
+import NotFound from '../NotFound/NotFound';
+import NavBar from '../Shared/NavBar/NavBar';
+import './Purchase.css'
 const Purchase=() => {
     //destructuring user
     const {user}=useAuth();
@@ -9,7 +13,7 @@ const Purchase=() => {
     const {id}=useParams();
     const history=useHistory();
     //required state declaration
-    const [product, setProduct]=useState()
+    const [product, setProduct]=useState({})
     const [phoneNumber, setPhoneNumber]=useState('');
     const [address, setAddress]=useState('');
     //new product order
@@ -18,7 +22,12 @@ const Purchase=() => {
     useEffect(() => {
         fetch(`https://immense-escarpment-32991.herokuapp.com/products/${id}`)
             .then(res => res.json())
-        .then(data => setProduct(data))
+            .then(data => {
+                setProduct(data);
+            }).catch(error => {
+                    alert('product not found', error);
+            })
+
     }, []);
     const handlePlaceOrder=() => {
         addedProduct.email=user?.email;
@@ -36,7 +45,18 @@ const Purchase=() => {
             body: JSON.stringify(addedProduct),
         }).then((res) => res.json())
             .then((result) => console.log(result))
-            .finally(alert('Item Booked. Please Confirm on manage booking page'));
+            .finally(
+                Swal.fire({
+  title: `${product.Name} Booked`,
+  text: 'Please Complete Payment ASAP',
+  imageUrl: `${product.img}`,
+  imageWidth: 300,
+  imageHeight: 300,
+  imageAlt: 'Custom image',
+})
+
+            );
+
         history.push('/');
 }
 
@@ -50,38 +70,40 @@ const Purchase=() => {
         console.log(e.target.value);
         const adrs=e.target.value;
         setAddress(adrs);
-}
+    }
+
     return (
         <div className='placeorder-container'>
-            <h1 className='book-title'>You Want To Book {product?.placeName} Package</h1>
+            <NavBar></NavBar>
+            <h1 className='book-title text-center'>Details About {product?.Name} Package</h1>
         <div className='row mt-5 mx-auto container align-items-center justify-content-center'>
-            <div className='col-md-6'>
+            <div className='d-flex align-items-center justify-content-center'>
             <img className='img-fluid' src={product?.img} alt="" /></div>
-            <div className='details text col-md-6'>
-            <h1 className='details-title'>{product?.Name}</h1>
-            <h5 className='price'>Price: ${product?.price}</h5>
-            <h5 className="text-start spots"> <span className='span'> Spots Will Be visited:</span> {product?.spec}</h5>
+            <div className='details text col-12'>
+            <h1 className='details-title text-center'>{product?.Name}</h1>
+            <h3 className='price fs-3'>Price: ${product?.price}</h3>
+                    <h5 className="text-start mt-3 spots">{product?.spec}</h5>
+                    <h5 className='details-p'> <span className='span'>Benifits:  {product?.details}</span>  </h5>
             <p className='text-start'>Your Email: {user.email}</p>
             <p className='text-start'>Your Name: {user.displayName}</p>
-            <p className='text-start'>Hello, <span className='place-details'>{user.displayName} </span>Please Put Your address & Phone number below. Hardcopy of tickets will be sent to your address. Also All documents will also be mailed to your email address <span className='place-details'> {user.email} </span></p>
+            <p className='text-start'>Hello, <span className='place-details'>{user.displayName} </span>Please Put Your address & Phone number below. <span className='place-details'> {user.email} </span></p>
             <h5 className='address'>Your Address</h5>
                     <textarea onChange={handleAddress} className="form-control container my-3" placeholder='Address' />
                     <h5 className='address my-4  '>Please Give Your Phone Number </h5>
-                    <input className='mb-4 w-50 form-control container' placeholder='Phone Number' type="number" onChange={handlePhone} />
+                    <input className='mb-4 form-control container' placeholder='Phone Number' type="number" onChange={handlePhone} />
                     <br />
+                    <div className='d-flex align-items-center justify-content-center'>
             {
-               (phoneNumber === '') ? <button onClick={handlePlaceOrder} className="btn btn-danger disabled">Place Your Order</button> : <button onClick={handlePlaceOrder} className="btn btn-danger">Place Your Order</button>
-            }
+               (phoneNumber === '') ? <button onClick={handlePlaceOrder} className="px-3 py-2 btn btn-danger disabled">Place Your Order</button> : <button onClick={handlePlaceOrder} className="button-82-pushable disabled"><span class="button-82-shadow"></span>
+  <span class="button-82-edge"></span><span class="button-82-front text">Place Your Order</span></button>
+            }</div>
 
-            <Link to={`/`}>
+            </div>
 
-                </Link>
             </div>
-            <div className='more my-5'>
-                <h2 className='details-head'>More About {product?.Name}</h2>
-                <p className='details-p'>{product?.details}</p>
-            </div>
-        </div></div>
+            <br /> <br />
+        <Footer></Footer>
+        </div>
     );
 };
 

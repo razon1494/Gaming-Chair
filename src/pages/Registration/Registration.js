@@ -1,7 +1,10 @@
 import React from 'react';
 import {Link, useLocation, useHistory} from 'react-router-dom';
 import useAuth from '../../context/useAuth';
-import { useState } from "react";
+import {useState} from "react";
+import './Registration.css'
+import Footer from '../Home/Footer/Footer';
+import Swal from 'sweetalert2';
 // import {Spinner} from 'react-bootstrap';
 
 const Registration=() => {
@@ -15,8 +18,13 @@ const Registration=() => {
  //function to handle register
     const handleRegisterSubmit=e => {
         if(userData.password!==userData.password2) {
-            alert('password did not match');
-            return;
+            // alert('password did not match');
+             Swal.fire({
+  icon: 'error',
+  title: 'Sorry...Rejected',
+  text: `Password Did Not Matched`,
+})
+ return;
         }
         const userName=userData.fname+' '+userData.lname;
         userData['userName']=userName;
@@ -38,44 +46,45 @@ const Registration=() => {
     }
 
     return (
-        <div className='container mt-4'>
-            <h2 className='text-center'>Register Here</h2>
+        <div className='signup'>
+            <div className="login-welcome py-4 mb-4">
+            <h1 className='text-center'>Welcome To Gamer's Chairs</h1>
+            <h2 className='text-center'>Register Here</h2></div>
+            <div className="container mx-auto">
             <form onSubmit={handleRegisterSubmit}>
                 <div className="form-group">
-    <label for="exampleInputEmail1">First Name</label>
-    <input onBlur={handleOnBlur} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your First Name" name='fname'/>
-    <label for="exampleInputEmail1">Last Name</label>
-    <input onBlur={handleOnBlur} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Last Name" name='lname'/>
-    <label for="exampleInputEmail1">Email address</label>
-    <input onBlur={handleOnBlur} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name='email'/>
+    <label className='fs-4 label fw-bold' for="exampleInputEmail1">First Name</label>
+    <input onBlur={handleOnBlur} type="text" className="input w-75  mb-4 form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your First Name" name='fname'/>
+    <label className='fs-4 label fw-bold' for="exampleInputEmail1">Last Name</label>
+    <input onBlur={handleOnBlur} type="text" className="input  w-75 mb-4 form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Last Name" name='lname'/>
+    <label className='fs-4 label fw-bold' for="exampleInputEmail1">Email address</label>
+    <input onBlur={handleOnBlur} type="email" className="input w-75  form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name='email'/>
     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
-  <div className="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input onBlur={handleOnBlur} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" name='password'/>
+  <div className="form-group my-4">
+    <label className='fs-4 label fw-bold' for="exampleInputPassword1">Password</label>
+    <input onBlur={handleOnBlur} type="password" className="input  w-75  form-control" id="exampleInputPassword1" placeholder="Password" name='password'/>
   </div>
   <div className="form-group">
-    <label for="exampleInputPassword1">Confirm Password</label>
-    <input onBlur={handleOnBlur} type="password" className="form-control" id="exampleInputPassword1" placeholder="Re-type Password" name='password2'/>
+    <label className='fs-4 label fw-bold' for="exampleInputPassword1">Confirm Password</label>
+    <input onBlur={handleOnBlur} type="password" className="input w-75 mb-4 form-control" id="exampleInputPassword1" placeholder="Re-type Password" name='password2'/>
   </div>
   <div className="form-check">
   </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="button-84 px-5 mb-3">Submit</button>
 </form>
 
 
-                <Link to='/login'>Login Here</Link>
+               <h5> <Link className='toggle' to='/login'>Already Registered? Login Here</Link></h5>
                 {
                         authError&&<p>{authError.message}</p>
                     }
 
 
-              {/*   {
-                        isLoading&&<div>
-                             <Spinner animation="border" variant="danger" />
-                        </div>
-                    } */}
 
+
+            </div>
+        <Footer></Footer>
         </div>
     );
 };

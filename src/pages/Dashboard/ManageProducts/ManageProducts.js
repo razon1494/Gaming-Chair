@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Spinner} from 'react-bootstrap';
+import Swal from 'sweetalert2';
 import './ManageProducts.css'
 const ManageProducts=() => {
     const [products, setProducts]=useState([]);
@@ -14,8 +15,44 @@ const ManageProducts=() => {
                 setLoading(false);
             });
     }, [control]);
-    const handleDelete=id => {
-        var sure=window.confirm(`Are you sure you want to delete this Product`);
+  const handleDelete=id => {
+      let sure=false;
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if(result.isConfirmed) {
+          // setSure(true);
+          sure=true;
+          console.log(sure);
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          );
+        }
+      }).then(() => {
+        if(sure) {
+          fetch(`https://immense-escarpment-32991.herokuapp.com/deleteproduct/${id}`, {
+            method: "DELETE",
+            headers: {"content-type": "application/json"},
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if(data.deletedCount) {
+                setConrol(!control);
+              } else {
+                setConrol(false);
+              }
+            });
+        }
+      })
+        /* var sure=window.confirm(`Are you sure you want to delete this Product`);
         if(sure) {
       fetch(`https://immense-escarpment-32991.herokuapp.com/deleteproduct/${id}`, {
       method: "DELETE",
@@ -29,7 +66,7 @@ const ManageProducts=() => {
           setConrol(false);
         }
       });
-        }
+        } */
     console.log(id);
     }
     let index=1;

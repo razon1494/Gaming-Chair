@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Swal from 'sweetalert2';
 import useAuth from '../../../context/useAuth';
 import './MakeAdmin.css'
 const MakeAdmin=() => {
@@ -16,12 +17,21 @@ const MakeAdmin=() => {
         }).then(res => res.json()).then(data => {
             if(data.modifiedCount) {
                 console.log('Success', data);
-                alert('success')
+                // alert('success')
+                Swal.fire(
+  'YES!',
+  `${email} is now admin`,
+  'success'
+)
                 setEmail('')
                 setSuccess(true)
             }
             else {
-                alert('rejected, given email is not an user')
+                Swal.fire({
+  icon: 'error',
+  title: 'REJECTED',
+  text: `${email} is not an user or already admin`
+})
             }
 
         })

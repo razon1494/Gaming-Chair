@@ -27,7 +27,7 @@ const Dashboard=() => {
     console.log(admin);
     let { path, url } = useRouteMatch();
 
-    if(isLoading) { return <Spinner animation="grow" variant="warning" />;}
+    if(isLoading) { return <div className='d-flex align-items-center justify-content-center'><Spinner animation="grow" variant="warning" /></div> ;}
 
     return (
         <div>
@@ -94,6 +94,9 @@ const Dashboard=() => {
                                 <UserRoute path={`${path}/myorder`}>
                                 <MyOrders></MyOrders>
                                 </UserRoute>
+                                <Route exact path='*'>
+                                <DashBoardHome></DashBoardHome>
+                                </Route>
 
                             </Switch>
 

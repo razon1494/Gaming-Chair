@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import './AddProduct.css';
 import {useForm} from "react-hook-form";
 import axios from 'axios';
+import Swal from 'sweetalert2';
 const AddProduct=() => {
     const {register, handleSubmit, reset}=useForm();
 
@@ -11,7 +12,11 @@ const AddProduct=() => {
             .then(res => {
                 if(res.data.insertedId) {
                     //confirmation
-                    alert('Product Added SuccessFully');
+                    Swal.fire(
+  'DONE!',
+  'Your Product Added Succcessfully!',
+  'success'
+)
                     //reset the form
                     reset()
                 }
@@ -21,6 +26,7 @@ const AddProduct=() => {
     return (
         <div>
             <h2 className='add-product-title text-center'>ADD A NEW PRODUCT</h2>
+            <p className='text-center text-danger'>**All Fields Are Mandatory**</p>
 
             <div className="form-container container">
                 <form className='form row align-items-center justify-content-center' onSubmit={handleSubmit(onSubmit)}>

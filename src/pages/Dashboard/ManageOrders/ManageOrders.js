@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Swal from 'sweetalert2';
 import './ManageOrders.css'
 const ManageOrders=() => {
 
@@ -29,13 +30,32 @@ const ManageOrders=() => {
         .finally()
     }
 const handleDelete=(id) => {
-        var sure=window.confirm(`Are you sure you want to delete this order?`);
-        if(sure) {
-      fetch(`https://immense-escarpment-32991.herokuapp.com/deleteorder/${id}`, {
-      method: "DELETE",
+  // var sure=window.confirm(`Are you sure you want to delete this order?`);
+  let sure=false;
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if(result.isConfirmed) {
+          // setSure(true);
+          sure=true;
+          console.log(sure);
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          );
+        }
+      }).then(()=>{ if (sure) {
+            fetch(`https://immense-escarpment-32991.herokuapp.com/deleteorder/${id}`, {
+                method: "DELETE",
       headers: { "content-type": "application/json" },
-    })
-      .then((res) => res.json())
+            }).then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
           setConrol(!control);
@@ -43,7 +63,7 @@ const handleDelete=(id) => {
           setConrol(false);
         }
       });
-        }
+        }})
     console.log(id);
     };
      //table index variable

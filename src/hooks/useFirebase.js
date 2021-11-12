@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {getAuth, createUserWithEmailAndPassword,signInWithPopup, signInWithEmailAndPassword ,GoogleAuthProvider ,updateProfile , onAuthStateChanged, getIdToken, signOut} from "firebase/auth";
 import initializeFirebase from "../Firebase/firebase.initialize";
+import Swal from "sweetalert2";
 //initialize firebase app
 initializeFirebase();
 const useFirebase=() => {
@@ -26,16 +27,25 @@ const useFirebase=() => {
               updateProfile(auth.currentUser, {
                   displayName: name
               }).then(() => {
+                logout()
+                Swal.fire(
+  'Congratulations!',
+  'Your Registration is complete, Please sign in with email and password',
+  'success'
+)
 
-              }).catch((error) => {
-
-              });
-           history.replace('/');
+              })
+           history.replace('/login');
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage=error.message;
     setAuthError(errorMessage)
+     Swal.fire({
+  icon: 'error',
+  title: 'Sorry...Rejected',
+  text: `${authError.slice(22)}`,
+})
     // ..
   })
           .finally(()=>  setIsLoading(false));
@@ -53,9 +63,16 @@ const useFirebase=() => {
     // ...
   })
   .catch((error) => {
-    const errorCode = error.code;
+    const errorCode=error.code;
+    console.log(error.code,'s', error.message, 'd');
     const errorMessage=error.message;
     setAuthError(errorMessage)
+    // alert(authError.slice(22))
+    Swal.fire({
+  icon: 'error',
+  title: 'Sorry...Rejected',
+  text: `${authError.slice(22)}`,
+})
   }).finally(()=>  setIsLoading(false));
   }
 

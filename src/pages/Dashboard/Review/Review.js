@@ -3,6 +3,7 @@ import {useForm} from 'react-hook-form';
 import axios from 'axios';
 import userEvent from '@testing-library/user-event';
 import useAuth from '../../../context/useAuth';
+import Swal from 'sweetalert2';
 const Review=() => {
     const {register, handleSubmit, reset}=useForm();
     const {user}=useAuth();
@@ -13,7 +14,11 @@ const Review=() => {
             .then(res => {
                 if(res.data.insertedId) {
                     //confirmation
-                    alert('We got your review');
+                    Swal.fire(
+  'Thanks!',
+  'Your review is valuable for us!',
+  'success'
+)
                     //reset the form
                     reset()
                 }
@@ -22,12 +27,12 @@ const Review=() => {
   }
     return (
         <div className='container'>
-            <h2>Hello {user.displayName} Please Rate Us and Leave your valuable Review here</h2>
+            <h2 className='text-center review-head'>Hello {user.displayName} <br /> Please Rate Us and Leave your valuable Review here</h2>
 
-            <form className='form row align-items-center justify-content-center' onSubmit={handleSubmit(onSubmit)}>
+            <form className='form container row align-items-center justify-content-center' onSubmit={handleSubmit(onSubmit)}>
                 <br /><br />
-                 <h5 className='d-inline col-md-4'>Rating : </h5>
-                <select className='col-md-8 py-3 my-3' {...register("rating")}>
+                 <h3 className='Rating-h d-inline col-md-4'>Rating : </h3>
+                <select className='col-md-8 py-3 my-3 rating-select' {...register("rating")}>
         <option value="5" >Excellent (5 Star)</option>
         <option value="4">Good (4 Star)</option>
         <option value="3">Average (3 Star)</option>
@@ -36,7 +41,7 @@ const Review=() => {
         <option value="0">Worst (0 Star)</option>
       </select>
 
-                 <h3 className='d-inline col-md-4'>Your Review</h3>
+                 <h3 className='d-inline col-12 review-details'>Your Review</h3>
                 <textarea  className="form-control col-md-8 py-3 my-3"{...register("details", {required: true})} placeholder='Details' />
                 <br /><br />
       <input className='button-84 w-25 submit-part py-2 my-3 fs-3' type="submit" />

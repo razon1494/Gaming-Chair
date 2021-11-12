@@ -4,6 +4,7 @@
     padding-top: 5px;
     background-image: url();
     background-position: center;
+
 }
 .dashboard-container{
 
@@ -12,6 +13,10 @@
 
 .dashboard-panel{
   background-image: url(https://i.ibb.co/cy56mr5/pngwing-com-5.png);
+  background-image: url(https://i.ibb.co/k26bvqj/pngwing-com-16.png);
+  background-image: url(https://i.ibb.co/cNVrxgn/pngwing-com-9.png);
+
+
     background-position: center;
     text-decoration: none;
 
@@ -20,11 +25,13 @@
 .dashboard-routing{
 background-image: url(https://i.ibb.co/BnYsYdk/pngwing-com-6.png);
 background-image: url(https://i.ibb.co/YZhLgVC/pngwing-com-8.png);
-background-image: url(https://i.ibb.co/cNVrxgn/pngwing-com-9.png);
-background-image: url(https://i.ibb.co/zn1b7m2/pngwing-com-10.png);
-background-image: url(https://i.ibb.co/cgfVfqN/pngwing-com-11.png);
-    background-position: center;
-    /* background-repeat: no-repeat; */
+
+/* background-image: url(https://i.ibb.co/zn1b7m2/pngwing-com-10.png); */
+ background-image: url(https://i.ibb.co/cgfVfqN/pngwing-com-11.png);
+background-image: url(https://i.ibb.co/52Hb1gF/pngwing-com-12.png);
+background-image: url(https://i.ibb.co/cCWZGJC/pngwing-com-18.png);
+    background-position: top;
+    background-repeat: no-repeat;
     background-color: white;
 
 }
