@@ -5,7 +5,7 @@
 
 ## This is the client side code part of the website
 
-### GAMER'S CHAIRS website has 4 major parts
+### G.CHAIRS website has 4 major parts
 * Home
 * Users Booking
 * Dashboard

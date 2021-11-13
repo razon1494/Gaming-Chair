@@ -12,7 +12,7 @@ import './Home.css';
 const Home=() => {
     //Title Change
  useEffect(() => {
-        document.title="Gamer's Chairs";
+        document.title="G.Chairs";
     }, []);
     const [products, setProducts]=useState([]);
     const [loading, setLoading]=useState(true);
@@ -63,7 +63,7 @@ const Home=() => {
                 </div>
                 {/* Fourth Part Review part */}
                 <div className="review-section">
-                    <h2 className='text-center review-title py-3'>WHAT CLIENT'S SAY ABOUT <br /> GAMER'S CHAIRS</h2>
+                    <h2 className='text-center review-title py-3'>WHAT CLIENT'S SAY ABOUT <br /> G.CHAIRS</h2>
                     {
                 reviewloading && <div className='d-flex align-items-center justify-content-center'><Spinner animation="grow" variant="warning" />  </div>
                     }

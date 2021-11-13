@@ -10,7 +10,7 @@ const Login=() => {
     //Title Change
     useEffect(() => {
      //title change
-        document.title="Login Gamer's";
+        document.title="Login G.Chair";
     }, []);
     //for redirect getting location and history
     const location=useLocation();

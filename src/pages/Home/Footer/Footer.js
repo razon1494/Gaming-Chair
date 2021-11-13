@@ -8,7 +8,7 @@ const Footer = () => {
 
     <div class="footer-left">
 
-        <h3>Gamer's <span> Chairs</span></h3>
+        <h3>G.<span>Chairs</span></h3>
 
         <p class="footer-links">
             <Link to="/home" className='me-3'> Home  </Link>
@@ -18,7 +18,7 @@ const Footer = () => {
 
         </p>
 
-        <p class="footer-company-name">Gamer's Chair &copy; 2021</p>
+        <p class="footer-company-name">G.Chair &copy; 2021</p>
     </div>
 
     <div class="footer-center">
@@ -45,7 +45,7 @@ Mohakhali DOHS,</span>  Dhaka, Bangladesh</p>
 
         <p class="footer-company-about">
             <span>About the company</span>
-            Gamer's Chairs is the frist authorized Gaming Chair dealer in The World. We supply our chairs all over the world within 15 days. We Provide the lowest possible price and maintain the best quality service.
+            G.Chairs is the frist authorized Gaming Chair dealer in The World. We supply our chairs all over the world within 15 days. We Provide the lowest possible price and maintain the best quality service.
         </p>
 
         <div class="footer-icons">
