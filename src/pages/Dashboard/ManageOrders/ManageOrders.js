@@ -70,7 +70,7 @@ const handleDelete=(id) => {
 
     return (
         <div className='manage-order-container'>
-        <h2 className='text-center all-order-title'>HERE IS ALL ORDERS</h2>
+        <h1 className='text-center all-order-title'>HERE IS ALL ORDERS</h1>
         <p className='text-center all-order-p'>You can make status pending to shipped or delete the product</p>
             <div className='table-responsive'>
 <table class="table table-hover table-light table-responsive-sm">

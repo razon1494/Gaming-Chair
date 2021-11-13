@@ -31,28 +31,33 @@ const AddProduct=() => {
 {/* Add Form Starts here */}
             <div className="form-container container">
                 <form className='form row align-items-center justify-content-center' onSubmit={handleSubmit(onSubmit)}>
-                <h5 className='d-inline col-md-4'>Chair Name/Model : </h5>
-
-                <input className='col-md-8 py-3 my-3' {...register("Name", {required: true})} placeholder='Chair' />
+                <h4 className='d-inline col-md-3'>Chair Name: </h4>
+<div className='col-md-8'>
+                <input className='py-3 my-3 form-control' {...register("Name", {required: true})} placeholder='Chair' /></div>
                 <br /><br />
-        <h5 className='d-inline col-md-4'>Subtitle  :   </h5>
-                <input className='col-md-8 py-3 my-3' {...register("subtitle", {required: true})} placeholder='subtitle' />
+                    <h4 className='d-inline col-md-3'>Subtitle  :   </h4>
+                    <div className='col-md-8'>
+                <input className='form-control py-3 my-3' {...register("subtitle", {required: true})} placeholder='subtitle' /></div>
                 <br /><br />
-        <h5 className='d-inline col-md-4'>Specifications :   </h5>
-                <input className='col-md-8 py-3 my-3' {...register("spec", {required: true})} placeholder='Specifications' />
-                <br /><br />
-
-                <h5 className='d-inline col-md-4'>Price :   </h5>
-                <input className='col-md-8 py-3 my-3' type="number" {...register("price", {required: true})} placeholder='Price' />
+                    <h4 className='d-inline col-md-3'>Specifications :   </h4>
+                    <div className="col-md-8">
+                <input className='form-control py-3 my-3' {...register("spec", {required: true})} placeholder='Specifications' /></div>
                 <br /><br />
 
-                 <h5 className='d-inline col-md-4'>Photo URL :   </h5>
-                <input className='col-md-8 py-3 my-3' {...register("img", {required: true})} placeholder='Photo URL' />
+                    <h4 className='d-inline col-md-3'>Price :   </h4>
+                    <div className="col-md-8">
+                <input className='form-control py-3 my-3' type="number" {...register("price", {required: true})} placeholder='Price' /></div>
                 <br /><br />
-                 <h5 className='d-inline col-md-4'>Summary :   </h5>
-                <input className='col-md-8 py-3 my-3' {...register("summary", {required: true})} placeholder='Short Description About product' />
+
+                    <h4 className='d-inline col-md-3'>Photo URL :   </h4>
+                    <div className="col-md-8">
+                <input className='form-control py-3 my-3' {...register("img", {required: true})} placeholder='Photo URL' />
+                <br /><br /></div>
+                    <h4 className='d-inline col-md-3'>Summary :   </h4>
+                    <div className="col-md-8">
+                <input className='form-control py-3 my-3' {...register("summary", {required: true})} placeholder='Short Description About product' /></div>
                 <br /><br />
-                 <h3 className='my-4 text-center' >Write Description About Your Tour below   </h3>
+                 <h3 className='my-4 text-center' >Broad Description About Product</h3>
                 <textarea  className="form-control m-3 p-4 w-75"{...register("details", {required: true})} placeholder='Details' />
                 <br /><br />
       <input className='w-25 button-84 submit-part py-2 my-3 fs-3' type="submit" />

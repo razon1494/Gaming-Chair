@@ -8,6 +8,14 @@
 .admin-page{
   min-height: 500px;
 }
+.make-admin-page{
+  background-color: rgba(240, 255, 255, 0.836);
+  background-image: url(https://i.ibb.co/cgfVfqN/pngwing-com-11.png);
+  background-position: top;
+    background-repeat: no-repeat;
+    /* background-color: white; */
+
+}
 
 
 /* CSS */

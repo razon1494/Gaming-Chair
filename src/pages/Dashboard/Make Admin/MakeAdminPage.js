@@ -9,7 +9,7 @@ const MakeAdminPage=() => {
         document.title="Make Admin";
     }, []);
     return (
-        <div >
+        <div className='make-admin-page'>
             <NavBar></NavBar>
             <br /> <br />
             <div className="container admin-page">

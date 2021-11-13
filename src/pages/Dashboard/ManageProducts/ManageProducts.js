@@ -60,8 +60,8 @@ const ManageProducts=() => {
     let index=1;
     return (
         <div className='manage-product-container'>
-        <h2 className='manage-product-h text-center mb-4'>PRODUCTS </h2>
-        <p className='text-center fs-4 manage-product-p'>Be Careful! If you delete the product will gone for forever entirely. You need to add the product on add new product section.</p>
+        <h1 className='manage-product-h text-center mb-4'>PRODUCTS </h1>
+        <p className='text-center fs-4 manage-product-p'>Be Careful! If you confirm delete, the product will gone for forever entirely. </p>
             {
                 loading && <div className='d-flex align-items-center justify-content-center'><Spinner animation="grow" variant="warning" />  </div>
                 }

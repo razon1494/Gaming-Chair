@@ -1,4 +1,4 @@
-# GAMER'S CHAIRS
+# G.CHAIRS
 ## It is a Gaming Chair selling Company Website
 ## To see our live website please click the link below
 ## https://gamers-chair.web.app/home
@@ -52,6 +52,7 @@
 - Customer can give a review us with rating in 'Review' segment
 
 ### Admin Dashboard
+### All Dashboard items has individual navigation page on admin panel
 
 #### Manage All Orders
 

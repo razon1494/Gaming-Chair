@@ -92,7 +92,7 @@ const MyOrders=() => {
                 <i class="fas fa-times cross"></i>
               </button></td>
                     <td className='fs-5'>
-                        <p className='d-none'>{sum = sum+item.price}</p>
+                        <p className='d-none'>{sum = sum+ parseInt(item.price) }</p>
                         {item.status ? <p>Shipped</p> : <p>Pending</p> }
                 </td>
               </tr>
