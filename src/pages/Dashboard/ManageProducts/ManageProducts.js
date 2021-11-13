@@ -80,7 +80,7 @@ const ManageProducts=() => {
             {
                         products.map(pd => <tr>
                             <th scope="row">{index++}</th>
-                          <td> <span className='product-name'> {pd.Name}</span></td>
+                          <td> <span className='product-name '> {pd.Name}</span></td>
                           <td>
                             <img className='img-fluid' src={pd.img} alt="" width="100px"/></td>
                             <td className='produc-price'>${pd.price}</td>

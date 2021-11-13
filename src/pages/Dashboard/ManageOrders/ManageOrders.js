@@ -87,8 +87,8 @@ const handleDelete=(id) => {
             {
                         orders.map(service => <tr>
                             <th scope="row">{index++}</th>
-                            <td>{service.displayName} <br /> {service.email} <br /> {service.phonenumber}</td>
-                          <td>
+                            <td className='fs-4 fw-bold user-info'>{service.displayName} <br /> {service.email} <br /> {service.phonenumber}</td>
+                          <td className='fs-5 fw-bold'>
                             <img className='img-fluid' src={service.img} alt="" width="100px"/> <br />
                             {service.Name} <br /> ${service.price}</td>
 

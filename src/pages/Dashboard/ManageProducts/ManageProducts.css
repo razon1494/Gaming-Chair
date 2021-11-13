@@ -34,10 +34,12 @@
 }
 
 .product-name{
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.5rem;
     color: darkred;
     color: darkSlateGray;
+    font-weight: 600;
+    letter-spacing: 1px;
+    /* color: darkolivegreen; */
     font-family: 'Roboto', sans-serif;
 }
 .produc-price{

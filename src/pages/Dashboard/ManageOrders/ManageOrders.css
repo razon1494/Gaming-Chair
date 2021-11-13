@@ -17,6 +17,10 @@
     /* text-decoration: underline overline; */
   font-family: 'Roboto', sans-serif;
 }
+.user-info{
+  color: darkolivegreen;
+
+}
 .all-order-p{
     color: red;
     font-weight: 500;
