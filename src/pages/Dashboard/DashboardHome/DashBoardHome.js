@@ -8,6 +8,7 @@ const DashBoardHome=() => {
     const {user, admin}=useAuth();
     return (
         <div className='dbhome'>
+            {/* For Admin */}
             {
                 admin&&<div className='admin-div container'>
                     <h1>Hello, <span className='username'>{user.displayName} </span> <br /> Welcome as an Admin </h1>
@@ -20,6 +21,7 @@ const DashBoardHome=() => {
                     <h3> <i class="fas fa-arrow-right"></i> You can delete existing products in 'Manage Products' segment</h3>
                 </div>
             }
+            {/* For User */}
             {
                 !admin&&<div className='admin-div container'>
                     <h1>Hello, <span className='username'>{user.displayName} </span> <br /> You Are Our Valuable Customer</h1>

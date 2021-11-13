@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './Product.css'
 const Product=({pd}) => {
-    const {_id, Name, summary, img, price, spec, subtitle}=pd;
+    const {_id, Name, summary, img, price,  subtitle}=pd;
+    // Showing all items in card
     return (
         <div className="product pt-2 pb-4 col-lg-3 my-4 mx-lg-3 ">
             <img className='img-fluid' src={img} alt="" />

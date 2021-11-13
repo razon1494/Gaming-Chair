@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Footer from '../../Home/Footer/Footer';
 import NavBar from '../../Shared/NavBar/NavBar';
 import ManageProducts from './ManageProducts';
 
-const ManageProductsPage = () => {
+const ManageProductsPage=() => {
+      //Title Change
+ useEffect(() => {
+        document.title="Manage Products";
+ }, []);
     return (
         <div>
             <NavBar></NavBar>

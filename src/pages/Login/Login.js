@@ -8,13 +8,16 @@ import './Login.css'
 import Footer from '../Home/Footer/Footer';
 const Login=() => {
     //Title Change
- useEffect(() => {
+    useEffect(() => {
+     //title change
         document.title="Login Gamer's";
     }, []);
+    //for redirect getting location and history
     const location=useLocation();
     const history=useHistory();
     const {user,checkAdmin, setCheckAdmin, loginUser,isUser, admin, isLoading, signInWithGoogle, authError}=useAuth();
     const [loginData, setLoginData]=useState({})
+    //taking data and save it in state
     const handleOnChange=e => {
         const field=e.target.name;
         const value=e.target.value;
@@ -28,16 +31,12 @@ const Login=() => {
         setCheckAdmin(toggle);
         console.log(checkAdmin,'after');
     }
+    //calling login function
     const handleLoginSubmit=e => {
         setCheckAdmin(!checkAdmin);
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
-
-
-    // if(user.email) {
-    //     history.push('/dashboard')
-    // }
 
 
     return (<div>

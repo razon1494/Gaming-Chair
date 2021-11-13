@@ -9,9 +9,11 @@ import Swal from 'sweetalert2';
 
 const Registration=() => {
   //Title Change
- useEffect(() => {
+  useEffect(() => {
+   //title change
         document.title="Registation";
-    }, []);
+  }, []);
+
     const location=useLocation();
     const history=useHistory();
     const redirect_uri=location.state?.from.pathname||'/home';

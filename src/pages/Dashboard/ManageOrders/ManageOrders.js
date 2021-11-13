@@ -2,10 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Swal from 'sweetalert2';
 import './ManageOrders.css'
 const ManageOrders=() => {
-  //Title Change
- useEffect(() => {
-        document.title="Manage Orders";
-    }, []);
     //state declare
     const [orders, setOrders]=useState([]);
     const [check, setCheck]=useState(true);
@@ -95,7 +91,7 @@ const handleDelete=(id) => {
                           <td>
                             <img className='img-fluid' src={service.img} alt="" width="100px"/> <br />
                             {service.Name} <br /> ${service.price}</td>
-                            {/* <td>{service.phonenumber}</td> */}
+
                             <td>
                                 {
                         service.status? <button className='btn btn-success' onClick={() => handleApprove(service._id)} disabled>Shipped</button>:<button className='btn btn-success' onClick={() => handleApprove(service._id)}>Pending</button>

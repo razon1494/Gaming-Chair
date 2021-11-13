@@ -31,12 +31,14 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
         <Switch>
-
+{/* Home ROute for everyone public */}
         <Route exact path="/"> <Home></Home> </Route>
         <Route exact path="/home"><Home /> </Route>
-        <Route exact path="/products"><Products /></Route>
+            <Route exact path="/products"><Products /></Route>
+            {/* Private Route for both user and admin */}
         <PrivateRoute exact path="/purchase/:id"><Purchase/></PrivateRoute>
             <PrivateRoute path="/dashboard"><Dashboard /></PrivateRoute>
+           {/* Admin Route Only for admin */}
             <AdminRoute exact path='/manageorders'>
               <ManageOrdersPage></ManageOrdersPage>
             </AdminRoute>

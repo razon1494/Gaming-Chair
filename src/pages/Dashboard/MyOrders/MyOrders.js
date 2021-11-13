@@ -63,8 +63,9 @@ const MyOrders=() => {
     let sum=0;
     return (
         <div>
-            <h2 className='manage-product-h text-center'>My Orders Are here</h2>
-            <div className='table-responsive'>
+        <h2 className='manage-product-h text-center'>My Orders Are here</h2>
+        {/* Responsive Table for showing orders */}
+        <div className='table-responsive'>
         <table className="table table-hover">
           <thead>
     <tr>

@@ -58,7 +58,7 @@ const Payment=() => {
                 </div>
                     </div>
 
-
+<button className='button-84 w-25 mt-4 '>Confirm</button>
                 </div>
             </div>
 

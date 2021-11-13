@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Footer from '../../Home/Footer/Footer';
 import NavBar from '../../Shared/NavBar/NavBar';
 import MakeAdmin from './MakeAdmin';
 import './MakeAdmin.css'
-const MakeAdminPage = () => {
+const MakeAdminPage=() => {
+    // Title Change
+     useEffect(() => {
+        document.title="Make Admin";
+    }, []);
     return (
         <div >
             <NavBar></NavBar>

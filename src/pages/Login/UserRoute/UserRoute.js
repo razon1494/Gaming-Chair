@@ -3,7 +3,7 @@ import {Spinner} from 'react-bootstrap';
 import { Route, Redirect } from 'react-router-dom';
 import useAuth from '../../../context/useAuth';
 
-
+// User Route only for user
 const UserRoute=({children, ...rest}) => {
     console.log('hi for user route');
     const {user, isUser, isLoading}=useAuth();

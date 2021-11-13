@@ -52,7 +52,7 @@ const Purchase=() => {
             .finally(
                 Swal.fire({
   title: `${product.Name} Booked`,
-  text: 'Please Complete Payment ASAP',
+  text: 'Please Complete Payment From Dashboard',
   imageUrl: `${product.img}`,
   imageWidth: 300,
   imageHeight: 300,
@@ -60,10 +60,10 @@ const Purchase=() => {
 })
 
             );
-
-        history.push('/');
+//after booking if redirection needed just uncomment the below line
+        // history.push('/dashboard');
 }
-
+//getting phone number
      const handlePhone=e => {
         console.log(e.target.value);
         const phone=e.target.value;

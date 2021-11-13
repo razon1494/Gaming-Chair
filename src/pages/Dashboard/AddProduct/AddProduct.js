@@ -5,9 +5,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 const AddProduct=() => {
     const {register, handleSubmit, reset}=useForm();
- useEffect(() => {
-        document.title="ADD CHAIR";
-    }, []);
+    //calling api for add products
+
     const onSubmit=data => {
         console.log(data);
         axios.post(`https://immense-escarpment-32991.herokuapp.com/addservice `, data)
@@ -29,7 +28,7 @@ const AddProduct=() => {
         <div>
             <h2 className='add-product-title text-center'>ADD A NEW PRODUCT</h2>
             <p className='text-center text-danger'>**All Fields Are Mandatory**</p>
-
+{/* Add Form Starts here */}
             <div className="form-container container">
                 <form className='form row align-items-center justify-content-center' onSubmit={handleSubmit(onSubmit)}>
                 <h5 className='d-inline col-md-4'>Chair Name/Model : </h5>
@@ -56,7 +55,7 @@ const AddProduct=() => {
                  <h3 className='my-4 text-center' >Write Description About Your Tour below   </h3>
                 <textarea  className="form-control m-3 p-4 w-75"{...register("details", {required: true})} placeholder='Details' />
                 <br /><br />
-      <input className='w-25 button-50 submit-part py-2 my-3 fs-3' type="submit" />
+      <input className='w-25 button-84 submit-part py-2 my-3 fs-3' type="submit" />
     </form>
             </div>
 

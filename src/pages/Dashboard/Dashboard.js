@@ -44,6 +44,7 @@ const Dashboard=() => {
                         <Col className='dashboard-panel bg-black mt-1 ' xs={12} md={5} lg={3}>
                             <br /><br /><br />
                             <div className=' d-flex flex-column justify-content-center align-items-center'>
+
                         {
                             admin ? <div >
                                 <Link className='links my-3' to={`${url}/manageorders`}> <button className='button-30 my-3'>Manage All Orders</button> </Link>
@@ -61,7 +62,7 @@ const Dashboard=() => {
                         <br />
                         <Link className='links' to={`${url}/review`}><button className='button-30 my-3'> Review</button></Link>
                         <br /><br />
-                        {/* For Admin Routes */}
+
                         </div>
                         }
 

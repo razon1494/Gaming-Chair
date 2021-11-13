@@ -189,10 +189,10 @@ history.push('/');
       isLoading,
       isUser,
       signInWithGoogle,
-        registerUser,
+      registerUser,
       loginUser,
       authError,
-        checkAdmin, setCheckAdmin,
+      checkAdmin, setCheckAdmin,
         logout
     }
 

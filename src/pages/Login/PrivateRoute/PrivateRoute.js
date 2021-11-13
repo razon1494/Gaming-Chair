@@ -3,6 +3,7 @@ import { Spinner } from 'react-bootstrap';
 import { Redirect, Route, useLocation } from 'react-router';
 import useAuth from '../../../context/useAuth';
 
+// private Route for both admin and user
 
 const PrivateRoute=({children, ...rest}) => {
   const {user, isLoading}=useAuth();

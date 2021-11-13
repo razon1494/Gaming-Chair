@@ -77,10 +77,10 @@ const Home=() => {
                 </div>
                 </div>
             </div>
-            {/* Bonus Contact Form */}
+            {/* Bonus (fifth) Contact Form */}
             <h2 className='text-center contact-head py-2'>TO KNOW ABOUT WHOLESALE PRICE <br /> CONTACT US</h2>
             <ContactUs></ContactUs>
-            {/* Last Footer Part */}
+            {/* Last (sixth) Footer Part */}
             <Footer></Footer>
         </div>
     );
