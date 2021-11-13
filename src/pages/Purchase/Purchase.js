@@ -79,7 +79,7 @@ const Purchase=() => {
     return (
         <div className='placeorder-container'>
             <NavBar></NavBar>
-            <h1 className='book-title text-center'>Details About {product?.Name} Package</h1>
+            <h1 className='book-title text-center'>Details About {product?.Name} </h1>
         <div className='row mt-5 mx-auto container align-items-center justify-content-center'>
             <div className='d-flex align-items-center justify-content-center'>
             <img className='img-fluid' src={product?.img} alt="" /></div>
